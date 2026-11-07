@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Fragebogen Praxissoftware Arbeitsmedizin</title>
+<meta name="description" content="Zusammenfassung und Fragenkatalog zu den Anforderungen an eine Praxissoftware für die arbeitsmedizinische Vorsorge.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fragebogen Praxissoftware Arbeitsmedizin">
+<meta property="og:description" content="Was wir verstanden haben – und was wir noch wissen müssen, um mit der Umsetzung zu beginnen.">
+<meta name="theme-color" content="#0b6e66">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b6e66'/%3E%3Cpath d='M19 33l9 9 18-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f4f6f5;--surface:#ffffff;--surface-2:#f0f4f3;--surface-3:#e4ebe9;
+  --text:#16201e;--text-2:#3d4b48;--muted:#5f6e6a;--line:#dbe3e0;--line-strong:#c2cfcb;
+  --primary:#0b6e66;--primary-hover:#085a53;--primary-ink:#ffffff;--primary-soft:#e1f1ee;--primary-line:#94cbc2;
+  --star:#a24d07;--star-soft:#fcefdf;
+  --ok:#147a3c;--ok-soft:#e4f4e9;--warn:#8c5d00;--warn-soft:#fbf1d6;--bad:#b42318;--bad-soft:#fcebe9;
+  --focus:#1d4ed8;
+  --shadow:0 1px 2px rgba(14,30,27,.05),0 8px 28px rgba(14,30,27,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1312;--surface:#141c1a;--surface-2:#1a2422;--surface-3:#24312e;
+    --text:#e4edea;--text-2:#b8c7c3;--muted:#8d9e9a;--line:#27332f;--line-strong:#37463f;
+    --primary:#4cc2b2;--primary-hover:#6fd3c5;--primary-ink:#05221e;--primary-soft:#123430;--primary-line:#2c6b62;
+    --star:#f2a65a;--star-soft:#33240f;
+    --ok:#62d38e;--ok-soft:#132c1d;--warn:#efc54d;--warn-soft:#2d2611;--bad:#ff8b80;--bad-soft:#351716;
+    --focus:#7aa7ff;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 28px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1312;--surface:#141c1a;--surface-2:#1a2422;--surface-3:#24312e;
+  --text:#e4edea;--text-2:#b8c7c3;--muted:#8d9e9a;--line:#27332f;--line-strong:#37463f;
+  --primary:#4cc2b2;--primary-hover:#6fd3c5;--primary-ink:#05221e;--primary-soft:#123430;--primary-line:#2c6b62;
+  --star:#f2a65a;--star-soft:#33240f;
+  --ok:#62d38e;--ok-soft:#132c1d;--warn:#efc54d;--warn-soft:#2d2611;--bad:#ff8b80;--bad-soft:#351716;
+  --focus:#7aa7ff;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 28px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:20px}
+@media (max-width:960px){html{scroll-padding-top:76px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.2;margin:0;letter-spacing:-.01em}
+p{margin:0 0 .7em}
+a{color:var(--primary)}
+b,strong{font-weight:650}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:100;background:var(--surface);padding:8px 12px;border-radius:8px}
+svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Kopfbereich */
+.hero{background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1180px;margin:0 auto;padding:48px 24px 32px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--primary);margin:0}
+.hero h1{font-size:clamp(1.75rem,3.4vw,2.6rem);margin:.45rem 0 .8rem;font-weight:750}
+.lead{font-size:1.1rem;color:var(--text-2);max-width:72ch}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 14px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--text-2);font-size:.95rem}
+.step b{display:block;color:var(--text);margin-bottom:3px;font-size:1rem}
+.step .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--primary);color:var(--primary-ink);font-weight:700;font-size:.85rem;margin-bottom:8px}
+.meta-row{display:flex;flex-wrap:wrap;gap:6px 20px;color:var(--muted);font-size:.92rem;margin:0 0 16px}
+.meta-row span{display:inline-flex;align-items:center;gap:7px}
+.notice{display:flex;gap:12px;align-items:flex-start;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:12px;padding:12px 14px;font-size:.93rem;color:var(--text);max-width:900px}
+.notice svg{color:var(--warn);margin-top:2px}
+.notice p{margin:0}
+.hero-controls{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end;margin-top:22px}
+.field{display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--muted);min-width:240px}
+.save{font-size:.86rem;color:var(--muted);display:inline-flex;align-items:center;gap:6px;padding-bottom:9px}
+.save.bad{color:var(--bad)}
+.save::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.save.ok::before{background:var(--ok)}
+.save.bad::before{background:var(--bad)}
+.switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;padding-bottom:7px;position:relative}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .track{width:42px;height:24px;border-radius:999px;background:var(--line-strong);position:relative;transition:background .15s;flex:none}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+.switch input:checked+.track{background:var(--primary)}
+.switch input:checked+.track::after{transform:translateX(18px)}
+.switch input:focus-visible+.track{outline:2px solid var(--focus);outline-offset:2px}
+.switch small{color:var(--muted)}
+
+/* Layout */
+.layout{max-width:1180px;margin:0 auto;padding:28px 24px 120px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;align-items:start}
+.toc{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;padding:2px 4px 8px 2px}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin-bottom:14px}
+.prog-top{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;margin-bottom:8px}
+.prog-top .pct{font-weight:700;color:var(--primary);font-variant-numeric:tabular-nums}
+.bar{height:8px;border-radius:999px;background:var(--surface-3);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--primary);border-radius:999px;transition:width .3s}
+.prog small{display:block;margin-top:7px;color:var(--muted);font-size:.8rem}
+.toc-list{list-style:none;margin:0 0 14px;padding:0}
+.toc-list a{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;border-radius:9px;color:var(--text-2);text-decoration:none;font-size:.92rem}
+.toc-list a:hover{background:var(--surface-2);color:var(--text)}
+.toc-list a.active{background:var(--primary-soft);color:var(--text);font-weight:600}
+.toc-list .tl{display:inline-block;width:1.5em;color:var(--muted);font-weight:700}
+.toc-list .cnt{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.78rem;white-space:nowrap}
+.toc-list a.done .cnt{color:var(--ok);font-weight:700}
+.toc .btn{width:100%;justify-content:center}
+
+/* Mobile Leiste */
+.mbar{display:none;position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 16px;align-items:center;gap:12px}
+.mnav{position:relative}
+.mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.92rem;padding:7px 11px;border:1px solid var(--line-strong);border-radius:9px;background:var(--surface)}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav .toc-list{position:absolute;top:calc(100% + 8px);left:0;width:min(330px,calc(100vw - 32px));max-height:70vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;margin:0}
+.mprog{flex:1;display:flex;align-items:center;gap:8px;min-width:0}
+.mprog .bar{flex:1}
+.mprog .pct{font-size:.85rem;font-weight:700;color:var(--primary);font-variant-numeric:tabular-nums}
+@media (max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr);padding:18px 16px 110px}
+  .toc{display:none}
+  .mbar{display:flex}
+  .hero-inner{padding:32px 16px 24px}
+}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* Abschnitte */
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);margin-bottom:28px;overflow:hidden}
+.sec-head{padding:26px 32px 20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+.sec-head h2{font-size:1.38rem;display:flex;align-items:center;gap:12px;font-weight:720}
+.sec-letter{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary);color:var(--primary-ink);font-weight:750;font-size:1rem;flex:none}
+.sec-intro{color:var(--text-2);margin:10px 0 0;max-width:74ch}
+.sec-body{padding:6px 32px 26px}
+@media (max-width:600px){.sec-head{padding:20px 18px 16px}.sec-body{padding:2px 18px 20px}.sec-head h2{font-size:1.2rem}}
+
+/* Fragen */
+.q{padding:22px 0;border-top:1px solid var(--line)}
+.sec-body>.q:first-child,.sec-body>.sum:first-child{border-top:0}
+.q[hidden]{display:none}
+.q-title{display:flex;gap:10px;align-items:baseline;font-weight:620;font-size:1.03rem;margin:0 0 4px;line-height:1.4}
+.q-id{flex:none;font-size:.74rem;font-weight:750;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-variant-numeric:tabular-nums;position:relative;top:-1px;min-width:2.6em;text-align:center}
+.q.answered .q-id{background:var(--primary-soft);border-color:var(--primary-line);color:var(--primary)}
+.star{display:inline-block;color:var(--star);background:var(--star-soft);font-size:.72rem;font-weight:750;border-radius:999px;padding:1px 8px;margin-left:6px;white-space:nowrap;vertical-align:2px}
+.q-help{color:var(--text-2);font-size:.93rem;margin:4px 0 12px;max-width:76ch}
+.q-title+.opts,.q-title+.mx,.q-title+input,.q-title+textarea,.q-title+.grp{margin-top:12px}
+.q.small .q-title{font-size:.95rem;color:var(--text-2)}
+.core-only .q:not(.core),.core-only .sec.no-core{display:none}
+
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative;display:inline-flex;max-width:100%}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.opt .box{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:8px 14px 8px 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer;user-select:none;-webkit-user-select:none;transition:background .12s,border-color .12s,box-shadow .12s;font-size:.95rem;line-height:1.35}
+.opt .box::before{content:"";flex:none;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:50%;background:var(--surface);transition:background .12s,border-color .12s,box-shadow .12s}
+.opt input[type=checkbox]+.box::before{border-radius:4px}
+.opt:hover .box{border-color:var(--primary-line);background:var(--surface-2)}
+.opt input:checked+.box{border-color:var(--primary);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--primary)}
+.opt input:checked+.box::before{border-color:var(--primary);background:var(--primary)}
+.opt input[type=radio]:checked+.box::before{box-shadow:inset 0 0 0 3px var(--surface)}
+.opt input[type=checkbox]:checked+.box::after{content:"";position:absolute;left:17.5px;top:50%;width:5px;height:9px;border:solid var(--primary-ink);border-width:0 2px 2px 0;transform:translateY(-62%) rotate(45deg)}
+.opt input:focus-visible+.box{outline:2px solid var(--focus);outline-offset:2px}
+.opt.dk .box{color:var(--muted);border-style:dashed}
+.opt .lbl{min-width:0}
+.opt .d{color:var(--muted);font-size:.84rem}
+.opts:not(.cards) .opt .d::before{content:" · "}
+.opts.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.opts.cards .opt{display:flex}
+.opts.cards .opt .box{display:block;width:100%;padding:14px 16px 14px 44px;border-radius:12px}
+.opts.cards .opt .box::before{position:absolute;left:16px;top:16px}
+.opts.cards .opt input[type=checkbox]:checked+.box::after{left:21.5px;top:18px;transform:rotate(45deg)}
+.opts.cards .opt .t{display:block;font-weight:620}
+.opts.cards .opt .d{display:block;margin-top:3px;color:var(--text-2);font-size:.87rem}
+.rec{display:inline-block;font-style:normal;font-size:.7rem;font-weight:750;color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-line);border-radius:999px;padding:0 7px;margin-left:6px;vertical-align:1px}
+.grp{margin-top:16px}
+.grp:first-of-type{margin-top:10px}
+.grp-h{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:750;margin:0 0 8px}
+
+.inp,textarea{width:100%;font:inherit;font-size:.97rem;color:var(--text);background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:10px 12px;transition:border-color .12s,box-shadow .12s}
+textarea{min-height:92px;resize:vertical;line-height:1.5;display:block}
+textarea.big{min-height:190px}
+textarea.compact{min-height:56px}
+.inp:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 22%,transparent)}
+::placeholder{color:var(--muted);opacity:.85}
+.other{margin-top:10px;display:flex;gap:10px;align-items:center;max-width:640px}
+.other label{font-size:.86rem;color:var(--muted);white-space:nowrap}
+@media (max-width:600px){.other{flex-direction:column;align-items:stretch;gap:5px}}
+
+/* Matrix */
+.mx{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mx-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 18px;align-items:center;padding:11px 14px;border-top:1px solid var(--line)}
+.mx-head+.mrow{border-top:0}
+.mrow .ml b{display:block;font-weight:620;font-size:.96rem}
+.mrow .ml small{display:block;color:var(--text-2);font-size:.85rem;line-height:1.4}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg label{position:relative;display:flex}
+.seg input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.seg span{display:block;padding:7px 11px;font-size:.85rem;cursor:pointer;border-left:1px solid var(--line);white-space:nowrap;color:var(--text-2);user-select:none;-webkit-user-select:none;width:100%;text-align:center}
+.seg label:first-child span{border-left:0}
+.seg label:hover span{background:var(--surface-2)}
+.seg input:checked+span{background:var(--primary);color:var(--primary-ink);font-weight:650}
+.seg input[data-ci="1"]:checked+span{background:var(--primary-soft);color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}
+.seg input[data-ci="2"]:checked+span{background:var(--surface-3);color:var(--text)}
+.seg input[data-ci="3"]:checked+span{background:var(--warn-soft);color:var(--warn)}
+.seg input:focus-visible+span{outline:2px solid var(--focus);outline-offset:-3px}
+.mrow.set .ml b::after{content:" ✓";color:var(--primary);font-weight:700}
+@media (max-width:760px){.mrow{grid-template-columns:minmax(0,1fr)}.seg{display:flex;width:100%}.seg label{flex:1}.seg span{padding:8px 2px;font-size:.8rem}}
+
+/* Zusammenfassung */
+.sum{padding:24px 0;border-top:1px solid var(--line)}
+.sum h3{font-size:1.1rem;margin:0 0 10px;display:flex;gap:10px;align-items:baseline;font-weight:680}
+.sum-body{max-width:80ch}
+.sum-body ul{margin:.2em 0 .7em;padding-left:1.15em}
+.sum-body li{margin:.3em 0}
+.sum-body li::marker{color:var(--primary)}
+.rate{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.rate .lbl{font-size:.86rem;color:var(--muted);margin-right:2px}
+.rbtn{position:relative;display:inline-flex}
+.rbtn input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.rbtn span{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line-strong);font-size:.9rem;cursor:pointer;background:var(--surface);user-select:none;-webkit-user-select:none}
+.rbtn:hover span{background:var(--surface-2)}
+.rbtn input:focus-visible+span{outline:2px solid var(--focus);outline-offset:2px}
+.rbtn input[value=ok]:checked+span{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);font-weight:650}
+.rbtn input[value=partly]:checked+span{background:var(--warn-soft);border-color:var(--warn);color:var(--warn);font-weight:650}
+.rbtn input[value=wrong]:checked+span{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);font-weight:650}
+.sum textarea{margin-top:10px}
+.sum.info{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:20px 0 4px}
+.sum.info h3{font-size:1.02rem}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:6px 0 4px}
+.fcard{border:1px solid var(--primary-line);background:var(--primary-soft);border-radius:12px;padding:14px 16px;color:var(--text-2);font-size:.94rem}
+.fcard b{display:block;color:var(--text);margin-bottom:4px;font-size:.99rem}
+.fnum{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--primary);color:var(--primary-ink);font-weight:750;font-size:.8rem;margin-bottom:8px}
+.flow{list-style:none;margin:10px 0 8px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;counter-reset:f}
+.flow li{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 12px 13px;font-size:.87rem;color:var(--text-2);line-height:1.45}
+.flow li::before{counter-increment:f;content:counter(f);display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--primary);color:var(--primary-ink);font-size:.74rem;font-weight:750;margin-bottom:7px}
+.flow li b{display:block;color:var(--text);font-size:.93rem;margin-bottom:2px}
+.loop{font-size:.9rem;color:var(--muted)}
+.chips-static{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 12px}
+.chips-static span{font-size:.86rem;padding:4px 11px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-2)}
+.aims{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:4px 22px;margin:8px 0 0;padding:0;list-style:none}
+.aims li{display:flex;gap:10px;align-items:baseline;padding:5px 0;font-size:.93rem;color:var(--text-2)}
+.aims a{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--surface);border:1px solid var(--primary-line);color:var(--primary);font-weight:750;font-size:.8rem;text-decoration:none}
+.aims a:hover{background:var(--primary);color:var(--primary-ink)}
+.aims b{color:var(--text)}
+
+/* Abschluss */
+.howto{margin:4px 0 18px;padding-left:1.2em;color:var(--text-2)}
+.howto li{margin:.35em 0}
+.howto b{color:var(--text)}
+.final-count{display:flex;align-items:center;gap:14px;margin:6px 0 16px;flex-wrap:wrap}
+.final-count .bar{flex:1;min-width:160px;max-width:420px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:.95rem;font-weight:620;padding:10px 16px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--text);cursor:pointer;text-decoration:none;line-height:1.2}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--primary-ink)}
+.btn.primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
+.btn.danger{color:var(--bad)}
+.btn.sm{padding:7px 12px;font-size:.88rem}
+.btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.more{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}
+.more summary{cursor:pointer;color:var(--text-2);font-weight:600;font-size:.93rem}
+.more p{color:var(--text-2);font-size:.93rem;margin:10px 0 12px}
+.foot{max-width:1180px;margin:0 auto;padding:0 24px 40px;color:var(--muted);font-size:.84rem}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);background:var(--text);color:var(--bg);padding:11px 16px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;font-size:.92rem;max-width:calc(100vw - 32px);box-shadow:var(--shadow)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+noscript p{max-width:700px;margin:24px auto;padding:16px;background:var(--bad-soft);border-radius:12px}
+
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface-2:#fff;--shadow:none}
+  body{font-size:10.5pt}
+  .toc,.mbar,.hero-controls,.btns,#toast,.skip,.more,.notice,.steps,.meta-row{display:none!important}
+  .layout{display:block;padding:0}
+  .hero-inner{padding:0 0 12px}
+  .sec{border:1px solid #bbb;border-radius:8px;break-inside:auto}
+  .q,.sum{break-inside:avoid}
+  .opt input:not(:checked)+.box{opacity:.45}
+  .seg input:not(:checked)+span{opacity:.45}
+  .q[hidden]{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Anforderungsklärung · Stand 7. November 2026</p>
+    <h1>Praxissoftware für die arbeitsmedizinische Vorsorge</h1>
+    <p class="lead">Bevor wir mit der Umsetzung beginnen, möchten wir genau verstehen, wie die Software im Alltag funktionieren soll. Zuerst fassen wir zusammen, was wir bisher verstanden haben. Danach folgen Fragen zu Abläufen, Fristen, Dokumenten, Technik und Datenschutz.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><b>Zusammenfassung prüfen</b>Bei jedem Punkt angeben, ob er stimmt – Korrekturen direkt ins Textfeld.</div>
+      <div class="step"><span class="n">2</span><b>Fragen beantworten</b>Fast alles per Klick. Nichts ist Pflicht, „Weiß nicht“ ist eine gute Antwort. <span class="star" style="margin-left:0">★ wichtig</span> markiert die wichtigsten Fragen.</div>
+      <div class="step"><span class="n">3</span><b>Antworten zurückschicken</b>Am Ende eine Datei herunterladen und an den Absender dieses Links schicken.</div>
+    </div>
+    <p class="meta-row">
+      <span><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ca. 45–60 Minuten, nur ★-Fragen ca. 20 Minuten</span>
+      <span><svg class="i" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>speichert automatisch in diesem Browser</span>
+      <span><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.6c2.6.2 4.4 2 5 5.4"/></svg>gern gemeinsam ausfüllen</span>
+    </p>
+    <div class="notice" role="note">
+      <svg class="i" viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><path d="M12 17.5v.01"/></svg>
+      <p><b>Bitte keine Patientendaten eintragen</b>, also keine echten Namen von Probanden. Ihre Antworten bleiben auf diesem Gerät, bis Sie die Datei selbst verschicken. Die Seite lädt keine externen Inhalte und nutzt keine Tracker.</p>
+    </div>
+    <div class="hero-controls">
+      <label class="field"><span>Ausgefüllt von (optional)</span><input class="inp" id="respondent" type="text" placeholder="Name" autocomplete="name"></label>
+      <label class="switch"><input type="checkbox" id="coreOnly"><span class="track"></span><span>Nur die ★-Fragen anzeigen</span></label>
+      <span class="save" id="saveStatus" aria-live="polite">Noch nichts eingetragen</span>
+    </div>
+  </div>
+</header>
+
+<div class="mbar">
+  <details class="mnav"><summary><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Abschnitte</summary><ol class="toc-list"></ol></details>
+  <div class="mprog"><div class="bar"><i></i></div><span class="pct">0 %</span></div>
+  <button type="button" class="btn sm primary" data-action="download">Herunterladen</button>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Abschnitte">
+    <div class="prog">
+      <div class="prog-top"><b>Fortschritt</b><span class="pct">0 %</span></div>
+      <div class="bar"><i></i></div>
+      <small class="count">0 von 0 beantwortet</small>
+    </div>
+    <ol class="toc-list"></ol>
+    <button type="button" class="btn primary" data-action="download"><svg class="i" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Antworten herunterladen</button>
+  </nav>
+
+  <main id="main">
+    <noscript><p>Dieser Fragebogen braucht JavaScript. Bitte aktivieren Sie JavaScript oder öffnen Sie den Link in einem anderen Browser.</p></noscript>
+    <form id="form" autocomplete="off" novalidate></form>
+
+    <section class="sec" id="finish" data-sec="finish" aria-labelledby="h-finish">
+      <div class="sec-head">
+        <h2 id="h-finish"><span class="sec-letter">✓</span>Abschließen und zurückschicken</h2>
+        <p class="sec-intro">Sie können jederzeit herunterladen, auch wenn noch nicht alles beantwortet ist. Offene Punkte klären wir dann im Gespräch.</p>
+      </div>
+      <div class="sec-body">
+        <div class="final-count"><b id="finalCount">0 von 0 Fragen beantwortet</b><div class="bar"><i></i></div></div>
+        <ol class="howto">
+          <li><b>Antworten herunterladen</b> – die Datei enthält alle Antworten als lesbaren Text.</li>
+          <li><b>Datei an den Absender dieses Links schicken</b>, per E-Mail oder Messenger.</li>
+          <li>Alternativ den <b>Text kopieren</b> und direkt in eine E-Mail einfügen.</li>
+        </ol>
+        <div class="btns">
+          <button type="button" class="btn primary" data-action="download"><svg class="i" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Antworten herunterladen</button>
+          <button type="button" class="btn" id="btnCopy"><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Text kopieren</button>
+          <button type="button" class="btn" id="btnPrint"><svg class="i" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7" rx="2"/><path d="M7 14h10v6H7z"/></svg>Drucken oder als PDF</button>
+        </div>
+        <details class="more">
+          <summary>Auf einem anderen Gerät weitermachen oder neu beginnen</summary>
+          <p>Eine heruntergeladene Antwortdatei lässt sich hier wieder laden, zum Beispiel um am Tablet weiterzumachen.</p>
+          <div class="btns">
+            <label class="btn" for="importFile"><svg class="i" viewBox="0 0 24 24"><path d="M12 20V9M7 14l5-5 5 5M5 4h14"/></svg>Antwortdatei laden …</label>
+            <input type="file" id="importFile" accept=".txt,.md,.json,text/plain,application/json" hidden>
+            <button type="button" class="btn danger" id="btnReset">Alle Antworten löschen</button>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+</div>
+<p class="foot">Fragebogen zur Anforderungsklärung. Ihre Eingaben werden ausschließlich lokal in diesem Browser zwischengespeichert und verlassen Ihr Gerät nur, wenn Sie die Datei selbst weitergeben.</p>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+'use strict';
+
+const STORE_KEY = 'praxissoftware-fragebogen-v1';
+const DK = 'Weiß nicht';
+const RATING = { ok: 'Stimmt', partly: 'Stimmt teilweise', wrong: 'Stimmt nicht' };
+const has = (a, v) => Array.isArray(a) && a.includes(v);
+const billingShown = a => !!a.modules && ['Version 1', 'Später'].includes(a.modules.billing);
+
+/* ------------------------------------------------------------------ */
+/* Inhalt                                                              */
+/* ------------------------------------------------------------------ */
+const SECTIONS = [
+{
+  id: 'A', title: 'Was wir verstanden haben', short: 'Zusammenfassung',
+  intro: 'Grundlage sind der Funktionskatalog, die Liste der gewünschten Funktionen und das Angebot von armedo als Referenz. Bitte geben Sie bei jedem Punkt an, ob er stimmt, und korrigieren Sie, was nicht passt.',
+  items: [
+    { k: 'sum_what', t: 'sum', title: 'Was die Software ist', html: `
+      <p>Eine <b>Praxissoftware für eine kleine arbeitsmedizinische Praxis</b>, die die Beschäftigten mehrerer Kundenbetriebe betreut – etwa Kliniken mit Stationen, Pflegeeinrichtungen oder Unternehmen mit mehreren Standorten.</p>
+      <p>Im Zentrum steht die <b>digitale Vorsorgekartei nach ArbMedVV</b>: Wer muss wann zu welcher Vorsorge, wer war wann da, welche Bescheinigung ging an wen – und wann ist die nächste Vorsorge fällig. Die Software überwacht die Fristen selbst und erzeugt Fälligkeitslisten und Bescheinigungen per Klick, statt dass all das über verstreute Listen, Karteikarten und Vorlagen läuft.</p>
+      <p>Vorbild ist der Funktionsumfang kommerzieller Lösungen wie armedo – aber bewusst schlanker: nur das, was die Praxis wirklich braucht, dafür genau auf ihre Abläufe zugeschnitten.</p>` },
+    { k: 'sum_users', t: 'sum', title: 'Wer damit arbeitet', html: `
+      <p>Mit der Software arbeitet das <b>Praxisteam aus zwei Personen</b>. Welche Rollen es gibt und wer was sehen darf, fragen wir in den Abschnitten B und J.</p>
+      <p><b>Arbeitgeber und Probanden haben in Version 1 keinen eigenen Zugang.</b> Sie erhalten Fälligkeitslisten und Bescheinigungen als PDF oder Excel. Ein Zugang für Kunden (etwa die Personalabteilung) oder für Probanden wäre eine spätere Ausbaustufe.</p>` },
+    { k: 'sum_flow', t: 'sum', title: 'Der Kernablauf', html: `
+      <p>So stellen wir uns den Weg einer Vorsorge durch die Software vor:</p>
+      <ol class="flow">
+        <li><b>Mitarbeiterliste</b>Die Personalabteilung liefert Excel oder CSV, die Software importiert sie.</li>
+        <li><b>Kartei</b>Jeder Proband hat eine feste ID – mit Betrieb, Standort, Station und Tätigkeit.</li>
+        <li><b>Anlässe</b>Aus Tätigkeit und Gefährdungsbeurteilung ergeben sich Pflicht-, Angebots- oder Wunschvorsorge, dazu ggf. Eignungsuntersuchungen.</li>
+        <li><b>Fristen</b>Die Software berechnet Fälligkeiten; die Ärztin oder der Arzt kann jede Frist ändern.</li>
+        <li><b>Fälligkeitsliste</b>Übersicht und Export je Betrieb, Standort oder Station.</li>
+        <li><b>Vorsorge</b>Termin, Beratung, bei Bedarf Untersuchung oder Impfung.</li>
+        <li><b>Bescheinigung</b>Je ein Exemplar für Arbeitgeber und Proband.</li>
+      </ol>
+      <p class="loop">↻ Mit der Bescheinigung steht die nächste Frist fest – der Kreislauf beginnt bei Schritt 4 von vorn.</p>
+      <p>Fehlt ein Schritt, oder läuft es bei Ihnen anders? Den genauen Ablauf fragen wir in Abschnitt C ab.</p>` },
+    { k: 'sum_v1', t: 'sum', title: 'Umfang von Version 1: die vier gewünschten Kernfunktionen', html: `
+      <div class="fgrid">
+        <div class="fcard"><span class="fnum">1</span><b>Digitale Vorsorgekartei (nach ArbMedVV)</b>Stammdaten der Probanden (Name, Geburtsdatum, Betrieb, Standort, Station/Abteilung) sowie Historie der Vorsorgen, Impfungen, Expositionen und Fristen.</div>
+        <div class="fcard"><span class="fnum">2</span><b>Automatische Fälligkeits- und Fristenkontrolle</b>Übersicht, wer für Pflicht- oder Angebotsvorsorge fällig oder überfällig ist. Fälligkeitslisten per Klick als PDF oder Excel, gefiltert nach Standort, Betriebsstätte oder Station.</div>
+        <div class="fcard"><span class="fnum">3</span><b>Vorsorgebescheinigungen</b>Standardisierte, rechtssichere Erstellung und Druck nach dem Muster der AMR&nbsp;6.3 – je ein Exemplar für Arbeitgeber und Beschäftigte, ohne Befunde und Diagnosen (§&nbsp;6 ArbMedVV).</div>
+        <div class="fcard"><span class="fnum">4</span><b>Einfacher Datenimport (CSV/Excel)</b>Stapel-Import der Mitarbeiterlisten aus den Personalabteilungen, damit niemand Stammdaten abtippen muss – mit Prüfung auf Dubletten und Änderungen.</div>
+      </div>` },
+    { k: 'sum_base', t: 'sum', title: 'Was Version 1 zusätzlich braucht', html: `
+      <p>Diese Bausteine wurden nicht ausdrücklich genannt. Aus unserer Sicht sind sie aber nötig, damit die vier Kernfunktionen tragen:</p>
+      <ul>
+        <li><b>Kundenverwaltung:</b> Betriebe mit ihrer Struktur (z.&nbsp;B. Unternehmen → Standort → Abteilung/Station) und ihren Ansprechpartnern.</li>
+        <li><b>Katalog der Vorsorgeanlässe mit Fristregeln:</b> nach ArbMedVV und den Arbeitsmedizinischen Regeln (AMR) voreingestellt, von Ihnen anpassbar – auf Wunsch mit Tätigkeitsprofilen (z.&nbsp;B. „Pflege Intensivstation“ → zugehörige Anlässe).</li>
+        <li><b>Feste Probanden-ID:</b> Die Akte gehört zur Person, nicht zum Arbeitgeber. Namens-, Stations- oder Arbeitgeberwechsel unterbrechen die Historie nicht.</li>
+        <li><b>Benutzerkonten und Rechte:</b> sichere Anmeldung mit zweitem Faktor und ein Protokoll aller Zugriffe.</li>
+        <li><b>Vorlagen mit Praxis-Briefkopf</b> für Bescheinigungen und Listen.</li>
+        <li><b>Datensicherung und Komplett-Export:</b> tägliche verschlüsselte Sicherung; alle Daten jederzeit in offenen Formaten exportierbar, sodass Sie an niemanden gebunden sind.</li>
+      </ul>` },
+    { k: 'sum_later', t: 'sum', title: 'Bewusst noch nicht in Version 1', html: `
+      <p>Aus dem großen Funktionskatalog und dem armedo-Angebot stellen wir zunächst zurück:</p>
+      <div class="chips-static"><span>Ausführliche Anamnese- und Befunddokumentation</span><span>Diktat- und KI-Übernahme</span><span>Vital- und Laborwerte</span><span>Geräteanbindung (GDT)</span><span>Digitale Vorab-Anamnese</span><span>Videosprechstunde</span><span>Archiv für eingescannte Altakten (OCR)</span><span>Volltextsuche</span><span>Auswertungen und Jahresbericht</span><span>Terminplanung</span><span>Abrechnung</span><span>Zugänge für Arbeitgeber und Probanden</span></div>
+      <p>Die Software wird so gebaut, dass sich diese Module später ergänzen lassen. In Abschnitt H legen Sie fest, was davon doch in Version 1 gehört.</p>` },
+    { k: 'sum_rules', t: 'sum', title: 'Leitplanken', html: `
+      <ul>
+        <li><b>Schweigepflicht durch Technik:</b> Arbeitgeber erhalten nie Befunde oder Diagnosen – nur, dass, wann und aus welchem Anlass eine Vorsorge stattfand und wann die nächste angezeigt ist.</li>
+        <li><b>Gesundheitsdaten besonders geschützt</b> (Art.&nbsp;9 DSGVO): Speicherung in Deutschland, verschlüsselt, mit Zugriffsprotokoll.</li>
+        <li><b>Vorsorge und Eignung getrennt:</b> eigene Bescheinigungen; ein Eignungsergebnis geht nur mit schriftlicher Einwilligung an den Arbeitgeber.</li>
+        <li><b>Die Ärztin oder der Arzt entscheidet:</b> Die Software schlägt Fristen vor, jede Frist lässt sich überschreiben. Sie gibt keine Diagnose- oder Therapieempfehlungen. Damit bleibt sie ein Verwaltungs- und Dokumentationswerkzeug und fällt nach unserer Einschätzung nicht unter das Medizinprodukterecht.</li>
+        <li><b>Einfach vor vollständig:</b> lieber wenige Funktionen, die im Alltag schnell gehen, als viele, die niemand nutzt.</li>
+      </ul>` },
+    { k: 'sum_tech', t: 'sum', title: 'Technischer Rahmen (unser Vorschlag)', html: `
+      <ul>
+        <li><b>Web-Anwendung im Browser:</b> keine Installation, läuft auf PC, Mac und Tablet.</li>
+        <li><b>Server und Datenbank in Deutschland</b> (Cloud), alternativ ein Server in der Praxis. Das entscheiden wir anhand Ihrer Antworten in Abschnitt J.</li>
+        <li><b>Dokumente als PDF, Listen als Excel oder CSV</b> – druckfertig im A4-Format mit Ihrem Briefkopf.</li>
+        <li><b>Import-Assistent:</b> Die Spalten einer Kundenliste werden einmal zugeordnet; danach zeigt die Software Neuzugänge, Abgänge und Versetzungen zur Bestätigung an.</li>
+        <li><b>Entwicklung in kleinen Schritten:</b> Sie testen früh eine erste Version mit Beispieldaten, nicht erst am Ende.</li>
+      </ul>` },
+    { k: 'sum_aims', t: 'sum', noRate: true, title: 'Worauf unsere Fragen abzielen', html: '' },
+    { k: 'sum_missing', t: 'textarea', core: true, q: 'Was haben wir falsch verstanden oder ganz vergessen?', ph: 'Alles, was in der Zusammenfassung fehlt oder anders ist …' }
+  ]
+},
+{
+  id: 'B', title: 'Praxis und Mengengerüst', short: 'Praxis & Mengen', aim: 'Wie groß wird das System, und wer arbeitet damit?',
+  intro: 'Damit wir die Software richtig dimensionieren und Rollen und Rechte passend anlegen.',
+  items: [
+    { k: 'roles', t: 'multi', core: true, q: 'Wer wird mit der Software arbeiten?', o: ['Ärztin/Arzt (Arbeitsmedizin)', 'Weitere Ärztin/weiterer Arzt (Vertretung, Weiterbildung)', 'Medizinische Fachangestellte/Assistenz', 'Organisation/Verwaltung (ohne medizinische Tätigkeit)', 'Fachkraft für Arbeitssicherheit'], other: true },
+    { k: 'team2y', t: 'single', q: 'Wie viele Personen werden in zwei Jahren voraussichtlich damit arbeiten?', o: ['2 (wie heute)', '3–4', '5 oder mehr'], dk: true },
+    { k: 'tasks', t: 'textarea', q: 'Wer macht was? Bitte beschreiben Sie kurz die Aufgabenteilung.', ph: 'z. B. Termine vergeben, Listen pflegen, Vorsorgen durchführen, Bescheinigungen erstellen und versenden, Rechnungen schreiben …' },
+    { k: 'nClients', t: 'single', core: true, q: 'Wie viele Kundenbetriebe betreuen Sie?', o: ['1–5', '6–15', '16–40', 'mehr als 40'] },
+    { k: 'nProbanden', t: 'single', core: true, q: 'Wie viele Beschäftigte (Probanden) betreuen Sie insgesamt?', o: ['unter 500', '500–2.000', '2.000–5.000', '5.000–15.000', 'mehr als 15.000'], dk: true },
+    { k: 'nTermine', t: 'single', q: 'Wie viele Vorsorge- bzw. Untersuchungstermine haben Sie pro Jahr?', o: ['unter 500', '500–1.500', '1.500–4.000', 'mehr als 4.000'], dk: true },
+    { k: 'branches', t: 'multi', q: 'In welchen Branchen sind Ihre Kunden tätig?', o: ['Krankenhaus/Klinik', 'Pflege (stationär/ambulant)', 'Arztpraxis/MVZ/Labor', 'Rettungsdienst', 'Kita/Schule/Soziales', 'Industrie/Produktion', 'Handwerk/Bau', 'Logistik/Verkehr', 'Büro/Verwaltung', 'Öffentlicher Dienst'], other: true },
+    { k: 'levels', t: 'multi', core: true, q: 'Wie sind Ihre Kunden gegliedert – welche Ebenen braucht die Software?', help: 'Danach richten sich Filter, Fälligkeitslisten und der Import.', o: ['Unternehmen/Träger', 'Standort/Betriebsstätte', 'Bereich/Klinik/Fachabteilung', 'Abteilung/Station', 'Kostenstelle', 'Team/Arbeitsgruppe'], other: true },
+    { k: 'levelExample', t: 'text', q: 'Beispiel einer typischen Gliederung (gern anonymisiert)', ph: 'z. B. Klinikverbund → Klinikum Nord → Innere Medizin → Station 3B' },
+    { k: 'places', t: 'multi', core: true, q: 'Wo finden die Vorsorgen statt?', o: ['In eigenen Praxisräumen', 'Vor Ort beim Kunden (Sprechzimmer im Betrieb)', 'Mobil (z. B. Untersuchungsfahrzeug)', 'Telemedizinisch (Video oder Telefon)'], other: true },
+    { k: 'onsiteShare', t: 'single', q: 'Welcher Anteil Ihrer Arbeit findet vor Ort beim Kunden statt?', o: ['kaum', 'etwa ein Viertel', 'etwa die Hälfte', 'überwiegend', 'fast alles'] },
+    { k: 'toolsNow', t: 'multi', core: true, q: 'Womit arbeiten Sie heute?', o: ['Papierkartei/Karteikarten', 'Excel- oder Numbers-Listen', 'Word-Vorlagen', 'Kalender (Outlook, Google o. ä.)', 'Bestehende Praxissoftware', 'Systeme der Kunden'], other: true },
+    { k: 'oldSoftware', t: 'text', q: 'Welche Praxissoftware nutzen Sie, und was gefällt bzw. stört Sie daran?', showIf: a => has(a.toolsNow, 'Bestehende Praxissoftware') },
+    { k: 'migrate', t: 'single', q: 'Sollen Daten aus der bisherigen Software übernommen werden?', o: ['Ja, alles', 'Nur Stammdaten und Fristen', 'Nein, Neustart'], dk: true, showIf: a => has(a.toolsNow, 'Bestehende Praxissoftware') },
+    { k: 'painNow', t: 'textarea', core: true, q: 'Was funktioniert heute gut – und was kostet unnötig Zeit?', ph: 'z. B. Fristen von Hand nachhalten, Listen abtippen, Bescheinigungen einzeln in Word …' },
+    { k: 'whyBuild', t: 'multi', q: 'Was spricht für eine eigene Software statt eines fertigen Produkts wie armedo?', o: ['Geringere Kosten', 'Fertige Produkte sind zu umfangreich oder kompliziert', 'Wichtige Funktionen fehlen dort', 'Kontrolle über die eigenen Daten', 'Unabhängigkeit von einem Anbieter', 'Genau auf unsere Abläufe zugeschnitten'], other: true },
+    { k: 'otherPractices', t: 'single', q: 'Soll die Software später möglicherweise auch anderen Praxen zur Verfügung stehen?', help: 'Das ändert die technische Grundlage (mehrere getrennte Praxen in einem System), deshalb fragen wir schon jetzt.', o: ['Nein, nur für uns', 'Vielleicht', 'Ja, das ist ein Ziel'] }
+  ]
+},
+{
+  id: 'C', title: 'Ablauf: von der Mitarbeiterliste zur Bescheinigung', short: 'Ablauf', aim: 'Wie kommt ein Proband von der Mitarbeiterliste zur Bescheinigung, und wer tut was?',
+  intro: 'Hier wollen wir Ihren Alltag verstehen. Je genauer wir den Ablauf kennen, desto besser passt die Software.',
+  items: [
+    { k: 'caseStory', t: 'textarea', big: true, core: true, q: 'Bitte beschreiben Sie einen typischen Fall Schritt für Schritt.', help: 'Ein neuer Mitarbeiter fängt bei einem Ihrer Kunden an: Was passiert bis zur ausgehändigten Bescheinigung – und bis zur nächsten Vorsorge? Wer tut was, mit welchem Dokument, auf welchem Weg (E-Mail, Telefon, Papier)?', ph: '1. Die Personalabteilung meldet …\n2. …' },
+    { k: 'needSource', t: 'multi', core: true, q: 'Woher wissen Sie, welche Vorsorgen ein Proband braucht?', o: ['Der Arbeitgeber nennt die Anlässe je Person (aus der Gefährdungsbeurteilung)', 'Der Arbeitgeber nennt nur Tätigkeit oder Station – ich ordne die Anlässe zu', 'Feste Zuordnung je Station/Abteilung', 'Ich lege es bei der Vorsorge selbst fest'], other: true },
+    { k: 'profiles', t: 'single', cards: true, core: true, q: 'Tätigkeitsprofile: Wie sollen sie gepflegt werden?', help: 'Idee: Die Anlässe werden einmal je Tätigkeit festgelegt (z. B. „Pflege Intensivstation“ = Infektionsgefährdung + Feuchtarbeit + Nachtarbeit). Danach weist man Probanden nur noch das Profil zu.', o: [
+      { l: 'Je Kunde eigene Profile', d: 'Jeder Betrieb hat seine eigenen Tätigkeiten und Anlässe.' },
+      { l: 'Gemeinsamer Katalog, je Kunde anpassbar', d: 'Ein Grundkatalog für alle Kunden, mit Abweichungen pro Kunde.' },
+      { l: 'Automatisch je Station/Abteilung', d: 'Wer auf Station X arbeitet, bekommt die Anlässe von Station X.' },
+      { l: 'Keine Profile', d: 'Anlässe werden direkt beim Probanden eingetragen.' }], dk: true },
+    { k: 'hrInfo', t: 'multi', core: true, q: 'Wie erfahren Sie von Neueinstellungen, Austritten und Versetzungen?', o: ['Regelmäßige Gesamtliste der Personalabteilung', 'Einzelmeldungen per E-Mail oder Telefon', 'Der Proband erscheint einfach zum Termin', 'Bisher nicht zuverlässig'], other: true },
+    { k: 'hrFreq', t: 'single', q: 'Wie oft kommen solche Listen oder Meldungen?', o: ['monatlich', 'quartalsweise', 'halbjährlich oder jährlich', 'unregelmäßig'] },
+    { k: 'listRecipients', t: 'multi', core: true, q: 'Wer erhält Fälligkeitslisten?', o: ['Personalabteilung', 'Stations- oder Abteilungsleitung', 'Geschäftsführung/Betriebsleitung', 'Fachkraft für Arbeitssicherheit', 'Die Probanden direkt (Einladung)', 'Niemand – die Praxis lädt selbst ein'], other: true },
+    { k: 'listChannel', t: 'multi', q: 'Auf welchem Weg gehen die Listen hinaus?', o: ['E-Mail mit PDF oder Excel', 'Ausdruck oder Post', 'Persönlich (Begehung, ASA-Sitzung)', 'Über ein Kundenportal (später)'] },
+    { k: 'listFreq', t: 'single', q: 'Wie oft sollen Fälligkeitslisten erstellt werden?', o: ['monatlich', 'quartalsweise', 'vor jedem Sprechtag beim Kunden', 'nach Bedarf per Klick'] },
+    { k: 'apptHow', t: 'multi', q: 'Wie kommen Termine zustande?', o: ['Offene Sprechstunde ohne Termin', 'Der Kunde vereinbart Termine für seine Mitarbeiter', 'Die Praxis lädt Probanden direkt ein', 'Probanden buchen selbst', 'Feste Vorsorgetage beim Kunden mit Terminliste'], other: true },
+    { k: 'calendarV1', t: 'single', core: true, q: 'Braucht Version 1 einen Terminkalender?', o: ['Ja, unverzichtbar', 'Wäre gut, aber nicht zwingend', 'Nein, wir behalten unseren bisherigen Kalender'], dk: true },
+    { k: 'events', t: 'multi', q: 'Welche Ereignisse sollen festgehalten werden?', help: 'Daraus entsteht der Status, der im Dashboard und in den Listen erscheint. Ändert sich die Gefährdung, ist nach AMR 2.1 unabhängig von der Frist erneut Vorsorge fällig.', o: ['Angebotsvorsorge abgelehnt', 'Termin nicht wahrgenommen', 'Termin verschoben', 'Proband ruht (Elternzeit, Langzeiterkrankung)', 'Ausgeschieden', 'Tätigkeit oder Gefährdung geändert', 'Tätigkeit oder Exposition beendet', 'Vorsorge anderswo erfolgt (Nachweis liegt vor)'], other: true },
+    { k: 'declinedOffer', t: 'single', q: 'Abgelehnte Angebotsvorsorge: Wann soll sie wieder auf der Liste erscheinen?', help: 'Auch nach einer Ablehnung muss Angebotsvorsorge weiter angeboten werden, nach AMR 2.1 spätestens nach Ablauf der regulären Frist.', o: ['Nach der regulären Frist (AMR 2.1)', 'Früher, z. B. nach 12 Monaten', 'Lege ich im Einzelfall fest'], dk: true }
+  ]
+},
+{
+  id: 'D', title: 'Vorsorgeanlässe und Fristen', short: 'Anlässe & Fristen', aim: 'Nach welchen Regeln wird „fällig“ berechnet? Das ist das Herzstück.',
+  intro: 'Die Fristenlogik ist das Herzstück der Software: Sie entscheidet, wer auf welcher Liste erscheint. Wählen Sie bitte zuerst, welche Anlässe bei Ihren Kunden vorkommen. Den vollständigen Katalog mit allen Einzelheiten legen wir danach an.',
+  items: [
+    { k: 'anlaesse', t: 'groups', core: true, q: 'Welche Anlässe kommen bei Ihren Kunden vor?', help: 'Alles anklicken, was vorkommt. Die Kurzangaben dienen nur der Orientierung.', other: true, otherLabel: 'Weitere Anlässe', groups: [
+      { h: 'Gefahrstoffe (ArbMedVV Anhang Teil 1)', o: [
+        { l: 'Feuchtarbeit', d: 'Pflicht ab 4 h/Tag, Angebot über 2 h/Tag' },
+        { l: 'Krebserzeugende oder keimzellmutagene Stoffe', d: 'Kat. 1A/1B, z. B. Formaldehyd, bestimmte Zytostatika' },
+        { l: 'Stoffe der Anhang-Liste', d: '32 Stoffe, z. B. Asbest, Benzol, Chrom(VI), Hartholzstaub, Nickel, Quarzstaub' },
+        { l: 'Lösemittel', d: 'z. B. Toluol, Xylol, Methanol' },
+        { l: 'Atemwegs- oder hautsensibilisierende Stoffe' },
+        { l: 'Naturgummilatex-Handschuhe' },
+        { l: 'Schweißrauch' },
+        { l: 'Isocyanate' },
+        { l: 'Unausgehärtete Epoxidharze' },
+        { l: 'Blei' },
+        { l: 'Mehl-, Getreide- oder Futtermittelstaub' },
+        { l: 'Labortierstaub' },
+        { l: 'Schädlingsbekämpfung, Begasung' }] },
+      { h: 'Biologische Arbeitsstoffe (Anhang Teil 2)', o: [
+        { l: 'Patientenkontakt in Klinik, Praxis, Pflege', d: 'Pertussis, Hepatitis A, Masern, Mumps, Röteln' },
+        { l: 'Kontakt mit Körperflüssigkeiten', d: 'Hepatitis B und C (Verletzungs-, Spritz-, Aerosolgefahr)' },
+        { l: 'Tuberkulose-Abteilung, Pneumologie', d: 'Tuberkulose' },
+        { l: 'Medizinische Einrichtungen für Kinder', d: 'Varizellen' },
+        { l: 'Betreuungseinrichtungen ohne Behandlung', d: 'Hepatitis A, B und C' },
+        { l: 'Kita', d: 'Pertussis, Masern, Mumps, Röteln, Varizellen' },
+        { l: 'Notfall- und Rettungsdienst', d: 'Hepatitis B und C' },
+        { l: 'Pathologie', d: 'Hepatitis B und C' },
+        { l: 'Labor mit Biostoffen', d: 'gezielte Tätigkeiten' },
+        { l: 'Kläranlage, Kanalisation', d: 'Hepatitis A' },
+        { l: 'Wald, Parks, Zoos, Tiere', d: 'z. B. Borrelien, FSME, Tollwut' },
+        { l: 'Gentechnische Arbeiten' },
+        { l: 'Angebotsvorsorge Biostoffe', d: 'z. B. Schutzstufe 2/3, nach Exposition mit möglicher PEP' }] },
+      { h: 'Physikalische Einwirkungen (Anhang Teil 3)', o: [
+        { l: 'Lärm', d: 'Pflicht ab 85 dB(A), Angebot über 80 dB(A)' },
+        { l: 'Vibrationen', d: 'Hand-Arm und Ganzkörper' },
+        { l: 'Künstliche optische Strahlung', d: 'z. B. Laser' },
+        { l: 'Hitze- oder Kältearbeit', d: 'extreme Hitze, Kälte ab −25 °C' },
+        { l: 'Taucherarbeiten' },
+        { l: 'Muskel-Skelett-Belastungen', d: 'Angebot: Lasten, Wiederholungen, Zwangshaltungen' },
+        { l: 'Natürliche UV-Strahlung', d: 'Angebot: im Freien ab 1 h/Tag' }] },
+      { h: 'Sonstige Tätigkeiten (Anhang Teil 4)', o: [
+        { l: 'Atemschutzgeräte', d: 'Pflicht Gruppe 2 und 3, Angebot Gruppe 1' },
+        { l: 'Tropen, Subtropen, Auslandsaufenthalte' },
+        { l: 'Bildschirmarbeit', d: 'Angebot, inkl. Augen und Sehvermögen' }] },
+      { h: 'Weitere Anlässe', o: [
+        { l: 'Wunschvorsorge', d: '§ 5a ArbMedVV' },
+        { l: 'Nachtarbeit', d: '§ 6 ArbZG: alle 3 Jahre, ab 50 jährlich' },
+        { l: 'Strahlenschutz', d: 'Kategorie A jährlich (StrlSchV)' },
+        { l: 'Jugendarbeitsschutz', d: 'JArbSchG' },
+        { l: 'Fahr-, Steuer- und Überwachungstätigkeiten', d: 'Eignung, G 25' },
+        { l: 'Arbeiten mit Absturzgefahr', d: 'Eignung, G 41' },
+        { l: 'Atemschutz-Eignung', d: 'G 26' },
+        { l: 'Sonstige Eignungs- oder Einstellungsuntersuchungen' },
+        { l: 'Fahrerlaubnis-Untersuchungen', d: 'FeV' },
+        { l: 'Betriebliche Impfungen', d: 'z. B. Influenza' },
+        { l: 'Mutterschutz-Beratung' },
+        { l: 'Betriebliches Eingliederungsmanagement (BEM)' }] }
+    ] },
+    { k: 'topAnlaesse', t: 'text', q: 'Welche fünf Anlässe machen den Großteil Ihrer Arbeit aus?', ph: 'z. B. Infektionsgefährdung, Bildschirmarbeit, Nachtarbeit …' },
+    { k: 'naming', t: 'single', q: 'Wie benennen Sie Anlässe im Alltag?', help: 'Die DGUV-Grundsätze wurden 2022 durch die DGUV-Empfehlungen ersetzt; die G-Nummern sind als Kürzel aber weiter verbreitet.', o: ['Mit G-Nummern (z. B. G 42, G 37)', 'Im Klartext nach ArbMedVV', 'Beides: Kürzel und Klartext'] },
+    { k: 'fristMode', t: 'single', cards: true, core: true, q: 'Wie sollen Fälligkeiten berechnet werden?', help: 'Nach AMR 2.1: erste Vorsorge innerhalb von 3 Monaten vor Aufnahme der Tätigkeit; die zweite spätestens nach 12 Monaten (nach 6 Monaten bei sensibilisierenden Stoffen und Feuchtarbeit, nach 24 Monaten bei Auslandsaufenthalten); danach spätestens alle 36 Monate. Das sind Höchstfristen: Auf der Vorsorgebescheinigung kann die Ärztin oder der Arzt eine kürzere Frist festlegen, nie eine längere.', o: [
+      { l: 'Regel als Vorschlag, ich passe an', d: 'Die Software schlägt die Höchstfrist nach AMR 2.1 vor; ich kann sie bei jeder Vorsorge verkürzen.', rec: true },
+      { l: 'Immer selbst festlegen', d: 'Ich trage das nächste Datum jedes Mal selbst ein; die Software prüft nur, dass die Höchstfrist eingehalten ist.' },
+      { l: 'Eigene Intervalle je Anlass', d: 'Ich pflege für jeden Anlass (bei Bedarf je Kunde) eigene, kürzere Standardintervalle.' }], dk: true },
+    { k: 'fristExceptions', t: 'textarea', q: 'Gibt es Anlässe, Kunden oder Verträge mit abweichenden Fristen?', ph: 'z. B. kürzere Intervalle für …, Strahlenschutz jährlich, vertraglich vereinbarte Untersuchungen …' },
+    { k: 'soonWindow', t: 'single', q: 'Ab wann soll eine Vorsorge als „bald fällig“ angezeigt werden?', o: ['4 Wochen vorher', '8 Wochen vorher', '3 Monate vorher', 'je Kunde einstellbar'] },
+    { k: 'dueGranularity', t: 'single', q: 'Soll die Fälligkeit in Listen und Dashboard tagesgenau oder monatsgenau erscheinen?', help: 'Auf der Vorsorgebescheinigung steht der nächste Termin als Monat/Jahr (AMR 6.3).', o: ['Tagesgenau (fällig am 14.03.2027)', 'Monatsgenau wie auf der Bescheinigung (03/2027)', 'Egal'] },
+    { k: 'bundle', t: 'single', q: 'Sollen Fristen mehrerer Anlässe zu einem gemeinsamen Termin gebündelt werden?', help: 'Beispiel: Infektionsgefährdung ist im März fällig, Bildschirmarbeit im Juni. Beides im März erledigen? Bei mehreren Anlässen gilt nach AMR 2.1 die kürzeste Frist.', o: ['Ja, automatisch auf den frühesten Termin', 'Ja, aber nur als Vorschlag', 'Nein, jeder Anlass für sich'], dk: true },
+    { k: 'startDate', t: 'single', q: 'Wird der Tätigkeitsbeginn (Eintritts- oder Versetzungsdatum) mitgeliefert?', help: 'Nur dann kann die Software die Erstvorsorge rechtzeitig einplanen: Sie muss innerhalb von 3 Monaten vor Tätigkeitsbeginn stattfinden.', o: ['Ja, immer', 'Manchmal', 'Nein'] },
+    { k: 'nachgehend', t: 'single', q: 'Nachgehende Vorsorge: Muss die Software sie nachhalten?', help: 'Gemeint ist Vorsorge nach dem Ende bestimmter Tätigkeiten, etwa mit krebserzeugenden Stoffen. Nach dem Ausscheiden übernimmt sie mit Einwilligung der Unfallversicherungsträger (DGUV Vorsorge, z. B. GVS, ODIN).', o: ['Ja', 'Selten relevant', 'Nein'], dk: true },
+    { k: 'vaccines', t: 'multi', core: true, q: 'Welche Impfungen bzw. Immunitätsnachweise sollen nachgehalten werden?', o: ['Hepatitis B (mit Anti-HBs-Titer)', 'Hepatitis A', 'Masern (Nachweis nach § 20 IfSG)', 'Mumps, Röteln', 'Varizellen', 'Tetanus, Diphtherie, Pertussis', 'Poliomyelitis', 'Influenza', 'COVID-19', 'FSME', 'Tollwut', 'Reiseimpfungen'], other: true },
+    { k: 'vaccinateSelf', t: 'single', q: 'Impfen Sie selbst?', o: ['Ja, regelmäßig', 'Gelegentlich', 'Nein – ich prüfe nur den Impfstatus und berate'] },
+    { k: 'vaccDoc', t: 'multi', q: 'Was soll je Impfung zusätzlich zum gesetzlichen Mindestinhalt erfasst werden?', help: 'Den Mindestinhalt nach § 22 IfSG legen wir ohnehin an: Datum, Impfstoff mit Charge, Krankheit, geimpfte Person, verantwortliche Ärztin bzw. verantwortlicher Arzt, Unterschrift sowie fällige Folge- und Auffrischimpfungen.', showIf: a => !!a.vaccinateSelf && !String(a.vaccinateSelf).startsWith('Nein'), o: ['Dosis (1./2./3./Auffrischung)', 'Aufklärung und Einwilligung', 'Impfstelle', 'Titer- bzw. Laborwert', 'Nachweis eingesehen (Impfpass)', 'Impfreaktionen', 'Impfstoffbestand und Chargen'], other: true },
+    { k: 'vaccRecall', t: 'single', q: 'Sollen Auffrischungen und Titerkontrollen ebenfalls als Frist erscheinen?', o: ['Ja', 'Nein'], dk: true }
+  ]
+},
+{
+  id: 'E', title: 'Probanden und Akte', short: 'Probanden & Akte', aim: 'Welche Daten gehören in die Kartei, und wie viel medizinische Dokumentation braucht Version 1?',
+  intro: 'Welche Daten in die Kartei gehören – und wie viel medizinische Dokumentation die erste Version schon enthalten soll.',
+  items: [
+    { k: 'fields', t: 'multi', core: true, q: 'Welche Angaben brauchen Sie je Proband?', o: ['Nachname', 'Vorname', 'Titel', 'Geburtsname/frühere Namen', 'Geburtsdatum', 'Geschlecht', 'Anschrift', 'Telefon', 'E-Mail', 'Personalnummer', 'Betrieb', 'Standort/Betriebsstätte', 'Abteilung/Station', 'Kostenstelle', 'Tätigkeit/Berufsbezeichnung', 'Eintrittsdatum', 'Austrittsdatum', 'Beschäftigungsart (Vollzeit, Teilzeit, Azubi, Leiharbeit …)', 'Vorgesetzte(r)', 'Hausärztin/Hausarzt', 'Sprache/Dolmetscherbedarf', 'Freitext-Bemerkung'], other: true },
+    { k: 'idExisting', t: 'single', q: 'Gibt es bestehende Probanden-Nummern, die erhalten bleiben sollen?', o: ['Ja', 'Nein, neu vergeben'], dk: true, other: true, otherLabel: 'Format/Beispiel', otherPh: 'z. B. P-2024-0137' },
+    { k: 'multiEmployer', t: 'single', q: 'Wie oft ist ein Proband bei mehreren Ihrer Kunden beschäftigt, gleichzeitig oder nacheinander?', help: 'Die Akte bleibt bei der Person; die Beschäftigungen werden als Historie geführt.', o: ['Häufig', 'Gelegentlich', 'Selten oder nie'] },
+    { k: 'otherGroups', t: 'multi', q: 'Wer gehört außer Festangestellten zu Ihren Probanden?', o: ['Auszubildende/Schüler', 'Studierende, PJ, Praktikanten', 'Leiharbeitnehmer', 'Ehrenamtliche', 'Mitarbeitende von Fremdfirmen', 'Bewerber vor der Einstellung'], other: true },
+    { k: 'medDocV1', t: 'single', cards: true, core: true, q: 'Wie viel medizinische Dokumentation soll Version 1 enthalten?', help: 'Ergebnis und Befunde der Vorsorge müssen schriftlich festgehalten werden (§ 6 Abs. 3 ArbMedVV). Offen ist nur, ob das in Version 1 schon in dieser Software passiert.', o: [
+      { l: 'Keine', d: 'Befunde dokumentiere ich weiter wie bisher (Papier oder anderes System).' },
+      { l: 'Kurze Notiz', d: 'Ein Freitextfeld je Vorsorge.' },
+      { l: 'Strukturiert mit Normalbefund', d: 'Vorlagen mit vorbelegtem Normalbefund – nur Abweichungen eintragen.' },
+      { l: 'Vollständig mit Messwerten', d: 'Zusätzlich Größe, Gewicht, BMI, Blutdruck, Puls, Seh- und Hörtest, Lungenfunktion, Labor.' }], dk: true },
+    { k: 'attachments', t: 'multi', q: 'Welche Dokumente sollen in der Akte abgelegt werden können?', o: ['Eingescannte Altakten', 'Laborbefunde (PDF)', 'Gerätebefunde (Audiogramm, EKG, Spirometrie)', 'Fremdbefunde und Arztbriefe', 'Impfpass-Kopie', 'Einwilligungen und Schweigepflichtentbindungen', 'Fotos'], other: true },
+    { k: 'oldFiles', t: 'single', q: 'Wie viele Altakten auf Papier gibt es ungefähr?', o: ['Keine', 'unter 500', '500–2.000', 'mehr als 2.000'], dk: true },
+    { k: 'digitize', t: 'single', q: 'Sollen die Altakten digitalisiert werden?', help: 'Der Funktionskatalog sieht vor, ruhende Altakten getrennt zu halten, bis der Proband wieder erscheint oder eine Schweigepflichtentbindung vorliegt.', showIf: a => !!a.oldFiles && a.oldFiles !== 'Keine', o: ['Ja, alle', 'Nur bei Wiedervorstellung', 'Nein'], dk: true },
+    { k: 'consents', t: 'single', q: 'Sollen Einwilligungen und Schweigepflichtentbindungen in der Software erfasst werden (wer, wofür, bis wann)?', o: ['Ja', 'Nein'], dk: true }
+  ]
+},
+{
+  id: 'F', title: 'Bescheinigungen und Dokumente', short: 'Bescheinigungen', aim: 'Was wird gedruckt oder verschickt, und auf welchem Weg?',
+  intro: 'Was die Software erzeugen soll – und wie es zu Arbeitgebern und Probanden gelangt.',
+  items: [
+    { k: 'docs', t: 'multi', core: true, q: 'Welche Dokumente soll die Software erzeugen?', o: ['Vorsorgebescheinigung für Beschäftigte', 'Vorsorgebescheinigung für Arbeitgeber', 'Eignungsbeurteilung (mit Einwilligung)', 'Mitteilung an den Arbeitgeber nach § 6 Abs. 4 ArbMedVV', 'Bescheinigung Nachtarbeit (ArbZG)', 'Impfbescheinigung', 'Einladung oder Terminerinnerung', 'Bescheinigung Strahlenschutz (StrlSchV)', 'Fälligkeitsliste je Kunde', 'Auszug aus der Vorsorgekartei (z. B. bei Austritt)', 'Dokumentation „Angebot abgelehnt“', 'Arztbrief/Befundbericht', 'Einwilligungs- und Aufklärungsbögen', 'Rechnung'], other: true },
+    { k: 'certLayout', t: 'single', q: 'Soll die Vorsorgebescheinigung dem Muster der AMR 6.3 folgen?', help: 'Muster: je Person ein Blatt, eine Zeile je Anlass mit Kennzeichnung Pflicht, Angebot oder Wunsch, nächster Termin als Monat/Jahr, Unterschrift mit Name, Anschrift und Qualifikation. Eignungsergebnisse stehen nie auf derselben Bescheinigung.', o: ['Ja, Muster übernehmen', 'Muster mit kleinen Anpassungen', 'Eigenes Layout – Vorlage schicke ich'], dk: true },
+    { k: 'certDelivery', t: 'multi', core: true, q: 'Wie gelangt die Bescheinigung zum Arbeitgeber?', o: ['Ausdruck – der Proband gibt sie selbst ab', 'Per Post', 'Per E-Mail (PDF)', 'Verschlüsselte E-Mail oder passwortgeschütztes PDF', 'Gesammelt je Kunde (z. B. monatlich)', 'Über ein Kundenportal (später)'], other: true },
+    { k: 'signature', t: 'single', q: 'Wie werden Bescheinigungen unterschrieben?', o: ['Handschriftlich auf dem Ausdruck', 'Eingescannte Unterschrift im PDF', 'Qualifizierte elektronische Signatur (eHBA)', 'Ohne Unterschrift (maschinell erstellt)'], dk: true },
+    { k: 'templates', t: 'single', q: 'Gibt es Vorlagen (Bescheinigungen, Briefe), die wir nachbauen sollen?', o: ['Ja – ich schicke sie geschwärzt', 'Teilweise', 'Nein – bitte neu gestalten'] },
+    { k: 'letterhead', t: 'single', q: 'Briefkopf und Logo', o: ['Vorhanden – schicke ich', 'Nicht vorhanden', 'In Arbeit'] },
+    { k: 'languages', t: 'multi', q: 'In welchen Sprachen werden Bescheinigungen oder Einladungen gebraucht?', o: ['Deutsch', 'Englisch'], other: true, otherLabel: 'Weitere Sprachen' },
+    { k: 'eignungScale', t: 'single', cards: true, q: 'Eignungsbeurteilungen: Welche Ergebnisstufen verwenden Sie?', showIf: a => has(a.docs, 'Eignungsbeurteilung (mit Einwilligung)'), o: [
+      { l: 'Stufen des DGUV-Formulars', d: 'Eignung gegeben · nach bestimmten Maßnahmen gegeben · bei verkürzten Fristen gegeben · nicht gegeben' },
+      { l: 'Bisherige Formulierung', d: 'keine · keine unter bestimmten Voraussetzungen · befristete · dauernde gesundheitliche Bedenken' },
+      { l: 'Eigene Formulierung', d: 'Bitte als Vorlage mitschicken.' }], dk: true },
+    { k: 'eignungConsent', t: 'single', q: 'Das Eignungsergebnis darf nur mit gesonderter schriftlicher Einwilligung an den Arbeitgeber. Wie soll die Einwilligung erfasst werden?', showIf: a => has(a.docs, 'Eignungsbeurteilung (mit Einwilligung)'), o: ['Unterschrift auf Papier, eingescannt in die Akte', 'Unterschrift auf dem Tablet'], other: true, otherLabel: 'Anders, nämlich', dk: true }
+  ]
+},
+{
+  id: 'G', title: 'Import und Export', short: 'Import & Export', aim: 'Wie sehen die Listen der Kunden aus, und was soll exportiert werden?',
+  intro: 'Der Import entscheidet, ob die Kartei aktuell bleibt, ohne dass jemand tippt. Der Export entscheidet, was Ihre Kunden in die Hand bekommen.',
+  items: [
+    { k: 'importFormat', t: 'multi', core: true, q: 'In welchem Format kommen Mitarbeiterlisten?', o: ['Excel (.xlsx)', 'CSV', 'PDF oder Papier', 'Unterschiedlich je Kunde'] },
+    { k: 'importCols', t: 'multi', q: 'Welche Spalten enthalten die Listen typischerweise?', o: ['Name, Vorname', 'Geburtsdatum', 'Personalnummer', 'Abteilung/Station', 'Kostenstelle', 'Tätigkeit', 'Eintritts-/Austrittsdatum', 'E-Mail', 'Vorgesetzte(r)', 'Gefährdungen/Vorsorgeanlässe'], other: true },
+    { k: 'importMode', t: 'single', core: true, q: 'Kommt jeweils die vollständige Liste oder nur die Änderungen?', o: ['Immer die vollständige Liste', 'Nur Neuzugänge und Abgänge', 'Unterschiedlich'] },
+    { k: 'missingInList', t: 'single', q: 'Jemand fehlt in einer neuen Gesamtliste. Was soll passieren?', o: ['Als „ausgeschieden“ vorschlagen – ich bestätige', 'Automatisch als ausgeschieden markieren', 'Nichts – nur manuell'] },
+    { k: 'matchKey', t: 'single', q: 'Woran lässt sich dieselbe Person über mehrere Listen sicher erkennen?', o: ['Personalnummer und Betrieb', 'Name und Geburtsdatum', 'Beides zusammen'], dk: true },
+    { k: 'clientTemplate', t: 'single', q: 'Könnten Kunden ihre Listen in einer von uns vorgegebenen Vorlage liefern?', o: ['Ja, realistisch', 'Bei manchen Kunden', 'Nein'] },
+    { k: 'dueListCols', t: 'multi', q: 'Welche Spalten soll die Fälligkeitsliste für den Arbeitgeber enthalten?', o: ['Name, Vorname', 'Geburtsdatum', 'Personalnummer', 'Abteilung/Station', 'Anlass', 'Pflicht/Angebot', 'Fällig am', 'Status (fällig/überfällig)', 'Letzte Vorsorge am', 'Bemerkung'], other: true },
+    { k: 'exportFormats', t: 'multi', q: 'Welche Exportformate brauchen Sie?', o: ['PDF', 'Excel', 'CSV', 'Direkt drucken'] },
+    { k: 'fullKarteiExport', t: 'single', q: 'Brauchen Kunden ihre komplette Vorsorgekartei als Export, etwa für Audits, die Berufsgenossenschaft oder Behörden?', o: ['Ja, regelmäßig', 'Auf Anfrage', 'Nein'] },
+    { k: 'hrInterface', t: 'single', q: 'Braucht es eine automatische Schnittstelle zur Personalsoftware der Kunden?', o: ['Wichtig', 'Später', 'Nicht nötig – Excel reicht'], other: true, otherLabel: 'Welche Systeme?', otherPh: 'z. B. SAP, Personio, Loga …' }
+  ]
+},
+{
+  id: 'H', title: 'Weitere Funktionen: was, wann?', short: 'Weitere Funktionen', aim: 'Was gehört in Version 1, was kommt später, was nie?',
+  intro: 'Bitte ordnen Sie jede Funktion ein. „Version 1“ heißt: Ohne sie lohnt sich der Start nicht. Je weniger in Version 1, desto früher können Sie loslegen.',
+  items: [
+    { k: 'modules', t: 'matrix', core: true, q: 'Einordnung der Funktionen', cols: ['Version 1', 'Später', 'Nicht nötig', 'Weiß nicht'], rows: [
+      { k: 'calendar', l: 'Terminkalender', d: 'Termine, Sprechtage beim Kunden, Terminlisten' },
+      { k: 'booking', l: 'Online-Terminbuchung', d: 'Probanden buchen selbst einen Termin' },
+      { k: 'reminders', l: 'Erinnerungen an Probanden', d: 'per E-Mail oder SMS' },
+      { k: 'preAnamnesis', l: 'Digitale Vorab-Anamnese', d: 'Fragebogen per Link oder auf dem Tablet im Wartebereich' },
+      { k: 'video', l: 'Videosprechstunde', d: 'telemedizinische Vorsorge nach AMR 3.4; die erste Vorsorge je Anlass bleibt in Präsenz' },
+      { k: 'findings', l: 'Befunddokumentation', d: 'Vorlagen mit Normalbefund, nur Abweichungen erfassen' },
+      { k: 'dictation', l: 'Diktat und KI-Übernahme', d: 'diktierte oder KI-strukturierte Texte in Anamnese, Befund und Beurteilung übernehmen' },
+      { k: 'vitals', l: 'Mess- und Vitalwerte', d: 'Größe, Gewicht, BMI automatisch, Blutdruck, Puls, Seh- und Hörtest' },
+      { k: 'gdt', l: 'Geräteanbindung (GDT)', d: 'Messwerte direkt von Audiometer, Sehtest, Spirometer, EKG' },
+      { k: 'lab', l: 'Laborbefunde elektronisch', d: 'Befunde vom Labor direkt in die Akte (LDT)' },
+      { k: 'epa', l: 'Anbindung an TI und ePA', d: 'z. B. Impfungen mit Einwilligung in die elektronische Patientenakte schreiben' },
+      { k: 'vacc', l: 'Impfmanagement', d: 'Impfbuch, Chargen, Auffrischungen, Titer' },
+      { k: 'archive', l: 'Archiv mit Texterkennung', d: 'eingescannte Altakten als durchsuchbare PDFs' },
+      { k: 'search', l: 'Suche über alle Akten', d: 'Freitext, Diagnosen (ICD), Befundwerte' },
+      { k: 'reports', l: 'Auswertungen und Jahresbericht', d: 'Bericht nach DGUV Vorschrift 2, anonymisierte Statistiken für den Arbeitsschutzausschuss (ASA)' },
+      { k: 'billing', l: 'Rechnungen an Kunden', d: 'Pauschalen, Stundensätze, Einzelleistungen, E-Rechnung, DATEV' },
+      { k: 'hours', l: 'Einsatzzeiten erfassen', d: 'Grundbetreuung und betriebsspezifische Betreuung nach DGUV Vorschrift 2, inkl. digitalem Anteil' },
+      { k: 'inspections', l: 'Begehungen und ASA-Protokolle', d: 'Begehungsberichte, Sitzungsprotokolle, Maßnahmen' },
+      { k: 'bem', l: 'BEM-Fälle', d: 'Betriebliches Eingliederungsmanagement begleiten und dokumentieren' },
+      { k: 'todo', l: 'Aufgaben und Wiedervorlagen', d: 'z. B. „Laborwert in 4 Wochen nachfordern“' },
+      { k: 'clientPortal', l: 'Zugang für Arbeitgeber', d: 'Kunden sehen Fälligkeiten, laden Listen hoch, rufen Bescheinigungen ab' },
+      { k: 'probandPortal', l: 'Zugang für Probanden', d: 'eigene Dokumente, Termine, Erinnerungen' },
+      { k: 'offline', l: 'Arbeiten ohne Internet', d: 'offline beim Kunden, später abgleichen' },
+      { k: 'tablet', l: 'Tablet-Bedienung', d: 'für Vorsorgen vor Ort optimiert' }
+    ] },
+    { k: 'missingModules', t: 'textarea', q: 'Fehlt eine Funktion?', ph: 'Was Sie oben vermissen …' },
+    { k: 'billingModel', t: 'multi', q: 'Wie rechnen Sie heute mit Ihren Kunden ab?', help: 'Erscheint, weil Rechnungen in Version 1 oder später kommen sollen.', showIf: billingShown, o: ['Pauschale je Beschäftigtem und Jahr', 'Stundensatz für Einsatzzeit', 'Einzelleistung je Vorsorge/Untersuchung', 'Nach GOÄ', 'Impfungen separat', 'Fahrtkosten'], other: true },
+    { k: 'billingTool', t: 'multi', q: 'Womit schreiben Sie heute Rechnungen?', showIf: billingShown, o: ['Word oder Excel', 'Buchhaltungsprogramm (z. B. lexoffice, sevDesk)', 'Über DATEV bzw. das Steuerbüro'], other: true }
+  ]
+},
+{
+  id: 'I', title: 'Technik und Arbeitsorte', short: 'Technik', aim: 'Wo, auf welchen Geräten und mit welcher Verbindung wird gearbeitet?',
+  intro: 'Damit die Software zu Ihren Geräten, Räumen und Verbindungen passt.',
+  items: [
+    { k: 'devices', t: 'multi', core: true, q: 'Auf welchen Geräten soll die Software laufen?', o: ['Windows-PC', 'Mac', 'Laptop', 'iPad/Tablet', 'Smartphone', 'Rechner beim Kunden (fremdes Gerät)'] },
+    { k: 'browserOk', t: 'single', q: 'Die Software läuft im Browser – wie eine Webseite, ohne Installation. Passt das?', o: ['Ja', 'Lieber ein installiertes Programm', 'Egal'] },
+    { k: 'internet', t: 'single', core: true, q: 'Wie zuverlässig ist das Internet an den Arbeitsorten?', o: ['Überall zuverlässig', 'Beim Kunden teils schlecht', 'Oft kein Internet – Offline-Betrieb nötig'] },
+    { k: 'medDevices', t: 'multi', q: 'Welche Geräte nutzen Sie bei Vorsorgen?', o: ['Sehtestgerät', 'Audiometer', 'Spirometer', 'EKG', 'Ergometer', 'Blutdruckmessgerät', 'Waage/Messstation', 'Point-of-Care-Labor', 'Keine'], other: true },
+    { k: 'deviceModels', t: 'text', q: 'Hersteller und Modelle, falls bekannt', help: 'Wichtig für eine spätere Geräteanbindung (GDT).', ph: 'z. B. Audiometer …, Sehtestgerät …' },
+    { k: 'labPath', t: 'single', q: 'Wie kommen Laborbefunde heute an?', o: ['Papier oder Fax', 'PDF per E-Mail oder Laborportal', 'Elektronisch (LDT)', 'Wir nutzen kein Labor'] },
+    { k: 'printers', t: 'multi', q: 'Drucker und Scanner', o: ['A4-Drucker', 'Etikettendrucker', 'Scanner/Multifunktionsgerät', 'Nichts davon'] },
+    { k: 'mailCal', t: 'multi', q: 'Welche E-Mail- und Kalenderdienste nutzen Sie?', o: ['Microsoft 365/Outlook', 'Google', 'Apple iCloud', 'Anderer Anbieter (z. B. IONOS, Strato)'], other: true },
+    { k: 'website', t: 'single', q: 'Gibt es eine Praxis-Website oder eine eigene Domain?', o: ['Ja', 'Nein'] },
+    { k: 'itService', t: 'single', q: 'Betreut ein IT-Dienstleister Ihre Praxis-IT?', o: ['Ja', 'Teilweise', 'Nein'] },
+    { k: 'ti', t: 'single', q: 'Ist die Praxis an die Telematikinfrastruktur (TI) angebunden, etwa mit Praxisausweis (SMC-B) und elektronischem Heilberufsausweis?', o: ['Ja', 'Nein', 'Geplant'], dk: true },
+    { k: 'dictationTools', t: 'text', q: 'Nutzen Sie Diktat-, Spracherkennungs- oder KI-Programme? Welche?' }
+  ]
+},
+{
+  id: 'J', title: 'Datenschutz, Sicherheit und Betrieb', short: 'Datenschutz & Betrieb', aim: 'Wo liegen die Daten, wer darf was sehen, und was passiert bei Problemen?',
+  intro: 'Gesundheitsdaten sind besonders geschützt. Hier entscheiden wir, wo die Daten liegen, wer was sehen darf und was bei Problemen passiert.',
+  items: [
+    { k: 'hosting', t: 'single', cards: true, core: true, q: 'Wo sollen die Daten liegen?', o: [
+      { l: 'Cloud-Server in Deutschland', d: 'Zugriff von überall; Sicherung und Updates zentral. Vertrag zur Auftragsverarbeitung mit dem Rechenzentrum. Laufende Kosten etwa 10–50 € im Monat.', rec: true },
+      { l: 'Server in der Praxis', d: 'Daten physisch bei Ihnen. Zugriff von unterwegs nur über VPN; Hardware, Strom und Sicherung liegen in Ihrer Verantwortung.' },
+      { l: 'Ein einzelner Rechner', d: 'Am einfachsten – aber kein gleichzeitiges Arbeiten zu zweit und kein Zugriff von unterwegs.' }], dk: 'Weiß nicht – bitte beraten' },
+    { k: 'assistRights', t: 'single', core: true, q: 'Was soll die Assistenz bzw. Verwaltung sehen dürfen?', o: ['Alles', 'Stammdaten, Termine, Fristen und Bescheinigungen – aber keine Befunde', 'Je Person einstellbar'], dk: true },
+    { k: 'twoFactor', t: 'single', q: 'Anmeldung mit zweitem Faktor (z. B. Code aus einer App): im Alltag zumutbar?', o: ['Ja, bei jeder Anmeldung', 'Ja, wenn höchstens einmal am Tag je Gerät', 'Nein'], dk: true },
+    { k: 'autoLogout', t: 'single', q: 'Automatisch abmelden nach einer Inaktivität von …', o: ['15 Minuten', '30 Minuten', '60 Minuten', 'Nie (nicht empfohlen)'] },
+    { k: 'karteiRole', t: 'single', q: 'Führen Sie die Vorsorgekartei für Ihre Kunden, oder führen die Kunden ihre eigene Kartei anhand Ihrer Bescheinigungen?', help: 'Rechtlich ist die Vorsorgekartei Sache des Arbeitgebers (§ 3 Abs. 4 ArbMedVV); bei Austritt erhält der Beschäftigte eine Kopie. Die Antwort entscheidet, ob Ihre Kunden regelmäßig einen Kartei-Export oder später einen eigenen Zugang brauchen.', o: ['Ich führe sie für die Kunden', 'Die Kunden führen sie selbst', 'Unterschiedlich'], dk: true },
+    { k: 'dsb', t: 'single', q: 'Gibt es eine Datenschutzbeauftragte bzw. einen Datenschutzbeauftragten?', o: ['Ja, intern', 'Ja, extern', 'Nein'], dk: true },
+    { k: 'deletion', t: 'single', q: 'Was soll nach Ablauf der Aufbewahrungsfristen passieren?', help: 'Ärztliche Unterlagen: in der Regel 10 Jahre (§ 630f BGB, AMR 6.1); bei krebserzeugenden oder keimzellmutagenen Stoffen 40 Jahre nach der letzten Vorsorge; im Strahlenschutz bis zum 75. Lebensjahr, mindestens 30 Jahre nach Ende der Tätigkeit. Die Software kann diese Fristen je Akte berechnen.', o: ['Die Software schlägt die Löschung vor, ich bestätige', 'Nur von Hand löschen'], dk: true },
+    { k: 'localBackup', t: 'single', q: 'Zusätzliche Sicherungskopie bei Ihnen vor Ort (z. B. verschlüsselte Festplatte)?', o: ['Ja', 'Nein', 'Egal'] },
+    { k: 'deputy', t: 'single', q: 'Soll im Notfall eine Vertretungsärztin bzw. ein Vertretungsarzt Zugriff bekommen können?', o: ['Ja', 'Nein'], dk: true },
+    { k: 'outage', t: 'single', q: 'Wenn die Software einen Tag ausfällt, ist das …', o: ['ärgerlich, aber mit Papier überbrückbar', 'kritisch – Ausfälle müssen sehr kurz sein'], dk: true },
+    { k: 'supportSpeed', t: 'single', q: 'Bei Problemen: Wie schnell muss jemand reagieren?', o: ['Am selben Tag', 'Innerhalb von 1–2 Tagen', 'Innerhalb einer Woche'] }
+  ]
+},
+{
+  id: 'K', title: 'Bedienung', short: 'Bedienung', aim: 'Was muss im Alltag besonders schnell gehen?',
+  intro: 'Was im Alltag schnell gehen muss – und wie Sie am liebsten arbeiten.',
+  items: [
+    { k: 'dashboard', t: 'multi', q: 'Was soll die Startseite zeigen?', o: ['Heutige Termine', 'Überfällige Vorsorgen je Kunde', 'Demnächst fällige Vorsorgen', 'Noch nicht verschickte Bescheinigungen', 'Letzte Importe und Änderungen', 'Aufgaben und Wiedervorlagen', 'Kennzahlen (z. B. Vorsorgen im Monat)'], other: true },
+    { k: 'searchBy', t: 'multi', q: 'Wonach suchen Sie Probanden meistens?', o: ['Name', 'Geburtsdatum', 'Personalnummer', 'Probanden-ID', 'Kunde oder Station'] },
+    { k: 'speed', t: 'single', q: 'Wie lange darf eine Standard-Vorsorge in der Software dauern (erfassen und Bescheinigung erstellen)?', o: ['unter 1 Minute', '1–3 Minuten', 'Hauptsache vollständig'] },
+    { k: 'inputPref', t: 'multi', q: 'Wie arbeiten Sie am liebsten?', o: ['Maus', 'Tastatur mit Kürzeln', 'Touch (Tablet)', 'Stift'] },
+    { k: 'likedApps', t: 'textarea', q: 'Gibt es Programme, deren Bedienung Sie mögen – oder gar nicht mögen?', ph: 'z. B. „So wie bei …, nur einfacher“' },
+    { k: 'involvement', t: 'single', core: true, q: 'Wie möchten Sie an der Entwicklung mitwirken?', o: ['Kurzer Test alle 1–2 Wochen (ca. 30 Minuten)', 'Einmal im Monat', 'Erst, wenn es fertig ist'] }
+  ]
+},
+{
+  id: 'L', title: 'Zeitplan, Budget und Einführung', short: 'Zeitplan & Budget', aim: 'Bis wann, zu welchen laufenden Kosten, und wie wird umgestellt?',
+  intro: 'Damit wir Version 1 richtig zuschneiden.',
+  items: [
+    { k: 'deadline', t: 'single', core: true, q: 'Bis wann soll Version 1 im Alltag laufen?', o: ['So schnell wie möglich', 'In etwa 3 Monaten', 'In etwa 6 Monaten', 'Kein fester Termin'] },
+    { k: 'deadlineReason', t: 'text', q: 'Gibt es einen festen Anlass oder Termin?', ph: 'z. B. neuer Kunde, Kündigung des Altsystems, Jahreswechsel …' },
+    { k: 'runCost', t: 'single', core: true, q: 'Welche laufenden Kosten pro Monat wären in Ordnung (Server, Sicherung, E-Mail-Versand)?', help: 'Zum Vergleich: armedo nennt 149 € pro Monat und Ärztin bzw. Arzt, zzgl. MwSt.', o: ['bis 25 €', 'bis 50 €', 'bis 100 €', 'mehr, wenn es sich lohnt'], dk: true },
+    { k: 'rollout', t: 'single', q: 'Wie soll die Einführung laufen?', o: ['Erst mit einem Pilotkunden', 'Alle Kunden auf einmal', 'Parallel zum bisherigen Vorgehen, dann umstellen'], dk: true }
+  ]
+},
+{
+  id: 'M', title: 'Zum Schluss', short: 'Zum Schluss', aim: 'Das Wichtigste in Ihren eigenen Worten.',
+  intro: 'Das Wichtigste in Ihren eigenen Worten.',
+  items: [
+    { k: 'top3', t: 'textarea', core: true, q: 'Die drei wichtigsten Dinge, die die Software können muss:', ph: '1.\n2.\n3.' },
+    { k: 'never', t: 'textarea', q: 'Was darf auf keinen Fall passieren?', ph: 'z. B. ein Arbeitgeber sieht einen Befund, eine Pflichtvorsorge wird übersehen …' },
+    { k: 'materials', t: 'multi', q: 'Was können Sie uns zusätzlich schicken? (bitte geschwärzt bzw. anonymisiert)', o: ['Muster einer Vorsorgebescheinigung', 'Muster einer Eignungsbeurteilung', 'Beispiel einer Mitarbeiterliste eines Kunden', 'Beispiel einer Fälligkeitsliste', 'Briefkopf und Logo', 'Übersicht der Kunden mit ihrer Struktur', 'Leistungs- oder Preisverzeichnis', 'Screenshots der bisherigen Software'], other: true },
+    { k: 'misc', t: 'textarea', q: 'Sonstiges und Fragen an uns' }
+  ]
+}
+];
+
+/* Ergänzungsfeld je Abschnitt und Nummerierung */
+SECTIONS.forEach(s => {
+  if (s.id !== 'A' && s.id !== 'M') {
+    s.items.push({ k: 'note_' + s.id, t: 'textarea', small: true, count: false, q: 'Ergänzungen zu diesem Abschnitt', ph: 'Alles, was oben nicht passt (optional)' });
+  }
+});
+const ITEMS = [];
+SECTIONS.forEach(s => {
+  let n = 0;
+  s.items.forEach(it => { it.sec = s.id; it.num = it.noRate ? '' : s.id + (++n); ITEMS.push(it); });
+  s.hasCore = s.items.some(it => it.core || (it.t === 'sum' && !it.noRate));
+});
+const BY_KEY = Object.fromEntries(ITEMS.map(it => [it.k, it]));
+
+/* ------------------------------------------------------------------ */
+/* Zustand                                                             */
+/* ------------------------------------------------------------------ */
+const fresh = () => ({ v: 1, answers: {}, other: {}, meta: { name: '', coreOnly: false }, updated: null });
+let state = fresh();
+let storageOK = true;
+
+function normalize(obj) {
+  const s = fresh();
+  if (obj && typeof obj === 'object') {
+    if (obj.answers && typeof obj.answers === 'object') s.answers = obj.answers;
+    if (obj.other && typeof obj.other === 'object') s.other = obj.other;
+    if (obj.meta && typeof obj.meta === 'object') s.meta = Object.assign(s.meta, obj.meta);
+    if (obj.updated) s.updated = obj.updated;
+  }
+  return s;
+}
+function load() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) state = normalize(JSON.parse(raw));
+  } catch (e) { storageOK = false; }
+}
+let saveTimer = null;
+function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(save, 250); }
+function save() {
+  state.updated = new Date().toISOString();
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); storageOK = true; }
+  catch (e) { storageOK = false; }
+  setSaveStatus();
+}
+function hasAnyAnswer() {
+  return ITEMS.some(isAnswered) || !!(state.meta.name || '').trim();
+}
+function setSaveStatus() {
+  const el = document.getElementById('saveStatus');
+  if (!storageOK) {
+    el.className = 'save bad';
+    el.textContent = 'Automatisches Speichern ist in diesem Browser nicht möglich – bitte am Ende die Datei herunterladen.';
+    return;
+  }
+  if (!state.updated) { el.className = 'save'; el.textContent = 'Noch nichts eingetragen'; return; }
+  const d = new Date(state.updated);
+  el.className = 'save ok';
+  el.textContent = 'Automatisch gespeichert · ' + d.toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) + ' Uhr';
+}
+
+/* ------------------------------------------------------------------ */
+/* Darstellung                                                         */
+/* ------------------------------------------------------------------ */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const optObj = o => (typeof o === 'string' ? { l: o } : o);
+function optionList(it) {
+  const list = (it.o || []).map(optObj);
+  if (it.dk) list.push({ l: typeof it.dk === 'string' ? it.dk : DK, dk: true });
+  return list;
+}
+
+function renderOpts(it, opts, kind) {
+  const type = kind === 'single' ? 'radio' : 'checkbox';
+  const cls = 'opts' + (it.cards ? ' cards' : '');
+  return '<div class="' + cls + '"' + (kind === 'single' ? ' role="radiogroup" aria-labelledby="t-' + it.k + '"' : '') + '>' +
+    opts.map(o => {
+      const val = o.v || o.l;
+      const rec = o.rec ? ' <em class="rec">Empfehlung</em>' : '';
+      const inner = (o.d || o.rec)
+        ? '<span class="lbl"><span class="t">' + esc(o.l) + rec + '</span>' + (o.d ? '<span class="d">' + esc(o.d) + '</span>' : '') + '</span>'
+        : '<span class="lbl">' + esc(o.l) + '</span>';
+      return '<label class="opt' + (o.dk ? ' dk' : '') + '"><input type="' + type + '" name="' + it.k + '" value="' + esc(val) + '" data-k="' + it.k + '" data-kind="' + kind + '"><span class="box">' + inner + '</span></label>';
+    }).join('') + '</div>';
+}
+
+function renderMatrix(it) {
+  return '<div class="mx"><div class="mx-head"><span>Funktion</span><span class="mx-count" data-mx="' + it.k + '">0 von ' + it.rows.length + ' eingeordnet</span></div>' +
+    it.rows.map(r =>
+      '<div class="mrow" data-row="' + r.k + '"><div class="ml"><b>' + esc(r.l) + '</b>' + (r.d ? '<small>' + esc(r.d) + '</small>' : '') + '</div>' +
+      '<div class="seg" role="radiogroup" aria-label="' + esc(r.l) + '">' +
+      it.cols.map((c, ci) => '<label><input type="radio" name="' + it.k + '__' + r.k + '" value="' + esc(c) + '" data-k="' + it.k + '" data-kind="matrix" data-row="' + r.k + '" data-ci="' + ci + '"><span>' + esc(c) + '</span></label>').join('') +
+      '</div></div>'
+    ).join('') + '</div>';
+}
+
+function renderQuestion(it) {
+  const tid = 't-' + it.k;
+  let h = '<div class="q' + (it.core ? ' core' : '') + (it.small ? ' small' : '') + '" id="q-' + it.k + '" data-k="' + it.k + '"' + (it.t === 'single' ? '' : ' role="group" aria-labelledby="' + tid + '"') + '>';
+  h += '<div class="q-title" id="' + tid + '"><span class="q-id">' + it.num + '</span><span>' + esc(it.q) + (it.core ? ' <span class="star" title="besonders wichtig">★ wichtig</span>' : '') + '</span></div>';
+  if (it.help) h += '<p class="q-help">' + esc(it.help) + '</p>';
+  switch (it.t) {
+    case 'single': h += renderOpts(it, optionList(it), 'single'); break;
+    case 'multi': h += renderOpts(it, optionList(it), 'multi'); break;
+    case 'groups':
+      h += it.groups.map(g => '<div class="grp"><div class="grp-h">' + esc(g.h) + '</div>' + renderOpts(it, g.o.map(optObj), 'multi') + '</div>').join('');
+      break;
+    case 'text': h += '<input class="inp" type="text" data-k="' + it.k + '" data-kind="text" placeholder="' + esc(it.ph || '') + '" aria-labelledby="' + tid + '">'; break;
+    case 'textarea': h += '<textarea data-k="' + it.k + '" data-kind="text" class="' + (it.big ? 'big' : (it.small ? 'compact' : '')) + '" placeholder="' + esc(it.ph || '') + '" aria-labelledby="' + tid + '"></textarea>'; break;
+    case 'matrix': h += renderMatrix(it); break;
+  }
+  if (it.other) {
+    h += '<div class="other"><label for="o-' + it.k + '">' + esc(it.otherLabel || 'Sonstiges / Ergänzung') + '</label><input class="inp" id="o-' + it.k + '" type="text" data-k="' + it.k + '" data-kind="other" placeholder="' + esc(it.otherPh || '') + '"></div>';
+  }
+  return h + '</div>';
+}
+
+function aimsHtml() {
+  return '<p>Die folgenden Abschnitte sollen alles klären, was wir für die Umsetzung brauchen – von der Fachlogik bis zum Server.</p><ul class="aims">' +
+    SECTIONS.filter(s => s.aim).map(s => '<li><a href="#s-' + s.id + '" aria-label="Zu Abschnitt ' + s.id + '">' + s.id + '</a><span><b>' + esc(s.title) + ':</b> ' + esc(s.aim) + '</span></li>').join('') + '</ul>';
+}
+
+function renderSummary(it) {
+  if (it.noRate) {
+    return '<div class="sum info" id="q-' + it.k + '"><h3>' + esc(it.title) + '</h3><div class="sum-body">' + (it.k === 'sum_aims' ? aimsHtml() : it.html) + '</div></div>';
+  }
+  return '<div class="sum q core" id="q-' + it.k + '" data-k="' + it.k + '">' +
+    '<h3 id="t-' + it.k + '"><span class="q-id">' + it.num + '</span>' + esc(it.title) + '</h3>' +
+    '<div class="sum-body">' + it.html + '</div>' +
+    '<div class="rate" role="radiogroup" aria-label="Einschätzung: ' + esc(it.title) + '"><span class="lbl">Ihre Einschätzung:</span>' +
+    Object.entries(RATING).map(([v, l]) => '<label class="rbtn"><input type="radio" name="' + it.k + '" value="' + v + '" data-k="' + it.k + '" data-kind="rating"><span>' + l + '</span></label>').join('') +
+    '</div><textarea class="compact" data-k="' + it.k + '" data-kind="note" placeholder="Korrektur oder Ergänzung (optional)" aria-label="Korrektur zu: ' + esc(it.title) + '"></textarea></div>';
+}
+
+function render() {
+  const form = document.getElementById('form');
+  form.innerHTML = SECTIONS.map(s =>
+    '<section class="sec' + (s.hasCore ? '' : ' no-core') + '" id="s-' + s.id + '" data-sec="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
+    '<div class="sec-head"><h2 id="h-' + s.id + '"><span class="sec-letter">' + s.id + '</span>' + esc(s.title) + '</h2>' + (s.intro ? '<p class="sec-intro">' + esc(s.intro) + '</p>' : '') + '</div>' +
+    '<div class="sec-body">' + s.items.map(it => (it.t === 'sum' ? renderSummary(it) : renderQuestion(it))).join('') + '</div></section>'
+  ).join('');
+  const toc = SECTIONS.map(s => '<li><a href="#s-' + s.id + '" data-sec="' + s.id + '"><span><span class="tl">' + s.id + '</span>' + esc(s.short || s.title) + '</span><span class="cnt"></span></a></li>').join('') +
+    '<li><a href="#finish" data-sec="finish"><span><span class="tl">✓</span>Abschließen</span><span class="cnt"></span></a></li>';
+  document.querySelectorAll('.toc-list').forEach(ol => { ol.innerHTML = toc; });
+}
+
+function applyState() {
+  document.querySelectorAll('#form input, #form textarea').forEach(el => {
+    const k = el.dataset.k; if (!k) return;
+    const a = state.answers[k];
+    switch (el.dataset.kind) {
+      case 'single': el.checked = a === el.value; break;
+      case 'multi': el.checked = Array.isArray(a) && a.includes(el.value); break;
+      case 'text': el.value = typeof a === 'string' ? a : ''; break;
+      case 'other': el.value = state.other[k] || ''; break;
+      case 'matrix': el.checked = !!(a && a[el.dataset.row] === el.value); break;
+      case 'rating': el.checked = !!(a && a.rating === el.value); break;
+      case 'note': el.value = (a && a.note) || ''; break;
+    }
+  });
+  document.getElementById('respondent').value = state.meta.name || '';
+  document.getElementById('coreOnly').checked = !!state.meta.coreOnly;
+  document.body.classList.toggle('core-only', !!state.meta.coreOnly);
+  setSaveStatus();
+  refresh();
+}
+
+/* ------------------------------------------------------------------ */
+/* Logik                                                               */
+/* ------------------------------------------------------------------ */
+function isAnswered(it) {
+  if (it.noRate) return false;
+  const a = state.answers[it.k];
+  const o = (state.other[it.k] || '').trim();
+  if (it.t === 'sum') return !!(a && (a.rating || (a.note || '').trim()));
+  if (it.t === 'matrix') return !!(a && Object.values(a).some(Boolean));
+  if (Array.isArray(a)) return a.length > 0 || !!o;
+  if (typeof a === 'string') return a.trim().length > 0 || !!o;
+  return !!o;
+}
+function isVisible(it) {
+  if (!it.showIf) return true;
+  try { return !!it.showIf(state.answers); } catch (e) { return true; }
+}
+function counted(it, coreOnly) {
+  if (it.noRate || it.count === false) return false;
+  if (!isVisible(it)) return false;
+  if (coreOnly && !(it.core || it.t === 'sum')) return false;
+  return true;
+}
+
+function refresh() {
+  ITEMS.forEach(it => {
+    const el = document.getElementById('q-' + it.k);
+    if (!el || it.noRate) return;
+    el.hidden = !isVisible(it);
+    el.classList.toggle('answered', isAnswered(it));
+    if (it.t === 'matrix') {
+      const m = state.answers[it.k] || {};
+      let n = 0;
+      it.rows.forEach(r => {
+        const set = !!m[r.k]; if (set) n++;
+        const row = el.querySelector('.mrow[data-row="' + r.k + '"]');
+        if (row) row.classList.toggle('set', set);
+      });
+      const c = el.querySelector('.mx-count');
+      if (c) c.textContent = n + ' von ' + it.rows.length + ' eingeordnet';
+    }
+  });
+  updateProgress();
+}
+
+function progress() {
+  const coreOnly = !!state.meta.coreOnly;
+  let tot = 0, done = 0;
+  const per = {};
+  SECTIONS.forEach(s => {
+    let st = 0, sd = 0;
+    s.items.forEach(it => { if (counted(it, coreOnly)) { st++; if (isAnswered(it)) sd++; } });
+    per[s.id] = [sd, st];
+    tot += st; done += sd;
+  });
+  return { tot, done, per };
+}
+
+function updateProgress() {
+  const p = progress();
+  const pct = p.tot ? Math.round(p.done / p.tot * 100) : 0;
+  document.querySelectorAll('.bar i').forEach(i => { i.style.width = pct + '%'; });
+  document.querySelectorAll('.pct').forEach(e => { e.textContent = pct + ' %'; });
+  document.querySelectorAll('.prog .count').forEach(e => { e.textContent = p.done + ' von ' + p.tot + ' beantwortet'; });
+  document.getElementById('finalCount').textContent = p.done + ' von ' + p.tot + ' Fragen beantwortet';
+  SECTIONS.forEach(s => {
+    const [d, t] = p.per[s.id];
+    document.querySelectorAll('.toc-list a[data-sec="' + s.id + '"]').forEach(a => {
+      a.classList.toggle('done', t > 0 && d === t);
+      a.querySelector('.cnt').textContent = t ? (d === t ? '✓ ' : '') + d + '/' + t : '';
+    });
+  });
+}
+
+function onEdit(e) {
+  const el = e.target;
+  const k = el.dataset && el.dataset.k;
+  if (!k) return;
+  const kind = el.dataset.kind;
+  switch (kind) {
+    case 'single': if (el.checked) state.answers[k] = el.value; break;
+    case 'multi': {
+      let arr = Array.isArray(state.answers[k]) ? state.answers[k].slice() : [];
+      if (el.checked) { if (!arr.includes(el.value)) arr.push(el.value); } else arr = arr.filter(v => v !== el.value);
+      state.answers[k] = arr; break;
+    }
+    case 'text': state.answers[k] = el.value; break;
+    case 'other': state.other[k] = el.value; break;
+    case 'matrix': { const m = Object.assign({}, state.answers[k]); m[el.dataset.row] = el.value; state.answers[k] = m; break; }
+    case 'rating': { const c = Object.assign({}, state.answers[k]); c.rating = el.value; state.answers[k] = c; break; }
+    case 'note': { const c = Object.assign({}, state.answers[k]); c.note = el.value; state.answers[k] = c; break; }
+    default: return;
+  }
+  scheduleSave();
+  refresh();
+}
+
+/* Ein zweiter Klick auf eine gewählte Option hebt die Auswahl wieder auf */
+let pressedChecked = null;
+function onPointerDown(e) {
+  const lab = e.target.closest && e.target.closest('label');
+  const inp = lab && lab.querySelector('input[type=radio]');
+  pressedChecked = inp && inp.checked ? inp : null;
+}
+function onClick(e) {
+  const inp = e.target;
+  if (!(inp instanceof HTMLInputElement) || inp.type !== 'radio' || !inp.dataset.k) return;
+  if (pressedChecked === inp) {
+    inp.checked = false;
+    const k = inp.dataset.k, kind = inp.dataset.kind;
+    if (kind === 'single') delete state.answers[k];
+    else if (kind === 'matrix') { const m = Object.assign({}, state.answers[k]); delete m[inp.dataset.row]; state.answers[k] = m; }
+    else if (kind === 'rating') { const c = Object.assign({}, state.answers[k]); delete c.rating; state.answers[k] = c; }
+    scheduleSave();
+    refresh();
+  }
+  pressedChecked = null;
+}
+
+/* ------------------------------------------------------------------ */
+/* Export, Import                                                      */
+/* ------------------------------------------------------------------ */
+function orderedMulti(it, arr) {
+  const all = it.t === 'groups' ? it.groups.flatMap(g => g.o.map(optObj)) : optionList(it);
+  const order = all.map(o => o.v || o.l);
+  const known = order.filter(v => arr.includes(v));
+  const unknown = arr.filter(v => !order.includes(v));
+  return known.concat(unknown);
+}
+function answerLines(it) {
+  const a = state.answers[it.k];
+  const o = (state.other[it.k] || '').trim();
+  const L = [];
+  switch (it.t) {
+    case 'sum':
+      if (a && a.rating) L.push('Einschätzung: ' + RATING[a.rating]);
+      if (a && (a.note || '').trim()) L.push('Korrektur/Ergänzung: ' + a.note.trim());
+      break;
+    case 'single': if (a) L.push(a); break;
+    case 'multi': case 'groups': if (Array.isArray(a)) orderedMulti(it, a).forEach(v => L.push('- ' + v)); break;
+    case 'text': case 'textarea': if (typeof a === 'string' && a.trim()) L.push(a.trim()); break;
+    case 'matrix':
+      if (a && Object.values(a).some(Boolean)) it.rows.forEach(r => L.push('- ' + r.l + ': ' + (a[r.k] || '–')));
+      break;
+  }
+  if (o) L.push((it.otherLabel || 'Sonstiges') + ': ' + o);
+  return L;
+}
+function buildText() {
+  const p = progress();
+  const now = new Date();
+  const fence = '`'.repeat(3);
+  let t = '# Fragebogen Praxissoftware Arbeitsmedizin – Antworten\n\n';
+  t += '- Ausgefüllt von: ' + ((state.meta.name || '').trim() || '–') + '\n';
+  t += '- Exportiert: ' + now.toLocaleString('de-DE', { dateStyle: 'long', timeStyle: 'short' }) + '\n';
+  t += '- Beantwortet: ' + p.done + ' von ' + p.tot + ' Fragen' + (state.meta.coreOnly ? ' (Ansicht: nur ★-Fragen)' : '') + '\n\n';
+  SECTIONS.forEach(s => {
+    t += '## ' + s.id + ' · ' + s.title + '\n\n';
+    s.items.forEach(it => {
+      if (it.noRate || !isVisible(it)) return;
+      const L = answerLines(it);
+      if (it.count === false && !L.length) return;
+      t += '**' + it.num + ' · ' + (it.t === 'sum' ? it.title : it.q) + '**\n\n';
+      t += (L.length ? L.join('\n') : '_keine Angabe_') + '\n\n';
+    });
+  });
+  t += '---\n\nMaschinenlesbare Kopie (damit sich die Antworten wieder in den Fragebogen laden lassen):\n\n' + fence + 'json\n' + JSON.stringify(state) + '\n' + fence + '\n';
+  return t;
+}
+function fileName() {
+  const d = new Date();
+  const z = n => String(n).padStart(2, '0');
+  return 'Fragebogen-Praxissoftware-' + d.getFullYear() + '-' + z(d.getMonth() + 1) + '-' + z(d.getDate()) + '.txt';
+}
+function download() {
+  save();
+  const blob = new Blob(['﻿' + buildText()], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = fileName();
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  toast('Datei gespeichert – bitte an den Absender des Links schicken.');
+}
+async function copyText() {
+  const txt = buildText();
+  try {
+    await navigator.clipboard.writeText(txt);
+    toast('Text kopiert – jetzt z. B. in eine E-Mail einfügen.');
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    ta.remove();
+    toast(ok ? 'Text kopiert – jetzt z. B. in eine E-Mail einfügen.' : 'Kopieren nicht möglich – bitte „Antworten herunterladen“ nutzen.');
+  }
+}
+function parseImport(text) {
+  const clean = text.replace(/^﻿/, '').trim();
+  try { return JSON.parse(clean); } catch (e) { /* weiter */ }
+  const blocks = clean.match(/```json\s*([\s\S]*?)```/g);
+  if (!blocks) return null;
+  const last = blocks[blocks.length - 1].replace(/^```json\s*/, '').replace(/```$/, '');
+  try { return JSON.parse(last); } catch (e) { return null; }
+}
+async function importFile(e) {
+  const f = e.target.files && e.target.files[0];
+  e.target.value = '';
+  if (!f) return;
+  let obj = null;
+  try { obj = parseImport(await f.text()); } catch (err) { obj = null; }
+  if (!obj || typeof obj.answers !== 'object') { toast('Die Datei enthält keine lesbaren Antworten.'); return; }
+  if (hasAnyAnswer() && !confirm('Die Antworten in diesem Browser durch die Antworten aus der Datei ersetzen?')) return;
+  state = normalize(obj);
+  save();
+  applyState();
+  toast('Antworten geladen.');
+}
+function resetAll() {
+  if (!confirm('Alle Antworten in diesem Browser löschen? Das lässt sich nicht rückgängig machen. Tipp: vorher „Antworten herunterladen“.')) return;
+  state = fresh();
+  try { localStorage.removeItem(STORE_KEY); } catch (e) { /* ignorieren */ }
+  applyState();
+  window.scrollTo(0, 0);
+  toast('Alle Antworten wurden gelöscht.');
+}
+let toastTimer = null;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3800);
+}
+
+/* ------------------------------------------------------------------ */
+/* Start                                                               */
+/* ------------------------------------------------------------------ */
+function init() {
+  load();
+  render();
+  const form = document.getElementById('form');
+  form.addEventListener('change', onEdit);
+  form.addEventListener('input', e => { if (e.target.matches('input[type=text], textarea')) onEdit(e); });
+  form.addEventListener('pointerdown', onPointerDown);
+  form.addEventListener('click', onClick);
+  form.addEventListener('submit', e => e.preventDefault());
+  document.getElementById('respondent').addEventListener('input', e => { state.meta.name = e.target.value; scheduleSave(); });
+  document.getElementById('coreOnly').addEventListener('change', e => {
+    state.meta.coreOnly = e.target.checked;
+    document.body.classList.toggle('core-only', e.target.checked);
+    scheduleSave(); updateProgress();
+  });
+  document.querySelectorAll('[data-action="download"]').forEach(b => b.addEventListener('click', download));
+  document.getElementById('btnCopy').addEventListener('click', copyText);
+  document.getElementById('btnPrint').addEventListener('click', () => window.print());
+  document.getElementById('btnReset').addEventListener('click', resetAll);
+  document.getElementById('importFile').addEventListener('change', importFile);
+  const mnav = document.querySelector('.mnav');
+  mnav.addEventListener('click', e => { if (e.target.closest('a')) mnav.removeAttribute('open'); });
+  document.addEventListener('click', e => { if (mnav.open && !mnav.contains(e.target)) mnav.removeAttribute('open'); });
+  window.addEventListener('beforeunload', e => {
+    if (!storageOK && hasAnyAnswer()) { e.preventDefault(); e.returnValue = ''; }
+  });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const id = en.target.dataset.sec;
+        document.querySelectorAll('.toc-list a').forEach(a => a.classList.toggle('active', a.dataset.sec === id));
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    document.querySelectorAll('.sec').forEach(s => io.observe(s));
+  }
+  applyState();
+}
+init();
+})();
+</script>
+</body>
+</html>
